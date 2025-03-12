@@ -1,0 +1,14 @@
+.canvas_container {
+    height: 100vh;
+    /* height: 200px; */
+    position: sticky;
+    top: 0;
+    /* background-color: var(--color-panels-dark); */
+    background: linear-gradient(
+        -45deg,
+        rgba(32, 40, 50, 1) 0%,
+        rgba(20, 27, 35, 1) 100%
+    );
+    /* border-bottom: 2px solid white; */
+    z-index: 2;
+}

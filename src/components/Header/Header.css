@@ -1,0 +1,115 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: var(--padding-medium);
+    opacity: 0;
+    z-index: 4;
+    background: linear-gradient(
+        0deg,
+        rgba(92, 104, 116, 0) 0%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    backdrop-filter: blur(2px);
+    font-family: "stratum-1-web";
+    color: white;
+}
+
+.header_main-name {
+    font-size: var(--20px);
+    font-weight: 700;
+}
+
+.header_main-position {
+    font-size: var(--16px);
+    font-weight: 300;
+}
+
+.header_icons-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.header_link {
+    text-decoration: none;
+    color: white;
+}
+
+.header_buttons {
+    width: 2.75rem;
+    height: 2.75rem;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: all ease-in-out 300ms;
+}
+
+.header_buttons:hover,
+.header_buttons:focus {
+    background-color: var(--color-accent);
+}
+
+.header_icons {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.button-mail,
+.button-sound {
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-sound-on,
+.icon-sound-off,
+.icon-mail,
+.mail-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all ease-in-out 300ms;
+}
+
+.icon-sound-on,
+.icon-mail {
+    translate: -50% -50%;
+}
+
+.icon-sound-off {
+    translate: 70% -50%;
+}
+
+.mail-text {
+    font-size: var(--20px);
+    font-weight: 700;
+    translate: 30% -50%;
+}
+
+/***** MEDIA QUERIES *****/
+@media all and (min-width: 600px) {
+    .button-mail:hover,
+    .btton-mail:active,
+    .button-mail:focus {
+        border-radius: 20px;
+        width: 10rem;
+    }
+
+    .button-mail:hover .icon-mail,
+    .btton-mail:active .icon-mail,
+    .button-mail:focus .icon-mail {
+        left: 20%;
+    }
+
+    .button-mail:hover .mail-text,
+    .btton-mail:active .mail-text,
+    .button-mail:focus .mail-text {
+        left: 25%;
+    }
+}

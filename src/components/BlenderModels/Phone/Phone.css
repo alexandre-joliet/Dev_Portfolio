@@ -1,0 +1,25 @@
+.html_container {
+    width: 375px;
+    height: 800px;
+    transform: none;
+    backface-visibility: hidden;
+}
+
+.iframe_container {
+    width: 375px;
+    height: 800px;
+    /* overflow: hidden; */
+    /* transform: scale(2); */
+    position: relative;
+}
+
+.iframe_phone {
+    background: black;
+    opacity: 0;
+    border: none;
+    border-radius: 30px;
+    width: 375px;
+    height: 800px;
+    /* transform: scale(1); */
+    /* transform-origin: top left; */
+}

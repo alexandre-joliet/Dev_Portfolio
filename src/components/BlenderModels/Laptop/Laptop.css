@@ -1,0 +1,22 @@
+.htmlLaptopScreen {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.iframe_laptop {
+    background: black;
+    width: 1300px;
+    height: 910px;
+    opacity: 0;
+    border: none;
+    clip-path: polygon(
+        5.5% 0,
+        94.5% 0,
+        100% 8%,
+        100% 92%,
+        94.5% 100%,
+        5.5% 100%,
+        0% 92%,
+        0 8%
+    );
+}

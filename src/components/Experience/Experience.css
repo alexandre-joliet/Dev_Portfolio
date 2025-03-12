@@ -1,0 +1,113 @@
+.canvas_home {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.canvas_home-visible {
+    visibility: visible;
+}
+
+.camera_buttons-toggle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 25px 25px 0 0;
+    color: white;
+    padding: 1rem 2rem;
+    width: 15%;
+    height: 4.25rem;
+    opacity: 0;
+    z-index: 4;
+}
+
+.buttons-toggle-action {
+    position: absolute;
+    bottom: 1rem;
+    background-color: transparent;
+    opacity: 0;
+}
+
+.camera_buttons_container {
+    position: absolute;
+    bottom: -7rem;
+    left: 50%;
+    translate: -50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: transparent;
+    width: 70%;
+    height: 7rem;
+    z-index: 4;
+}
+
+.button_reset,
+.button_laptop,
+.button_phone,
+.toggle-action-icon {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    transition: all ease-in-out 300ms;
+}
+
+.toggle-action-icon {
+    padding: 0;
+    width: 3rem;
+    height: 3rem;
+}
+
+.button_reset {
+    position: relative;
+    scale: 1.25;
+}
+
+.button_laptop:hover,
+.button_phone:hover {
+    animation: shake-subtle 0.3s ease-in-out;
+}
+
+@keyframes shake-subtle {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-2px);
+    }
+    50% {
+        transform: translateX(2px);
+    }
+    75% {
+        transform: translateX(-2px);
+    }
+}
+
+.button_reset:hover .button_reset-icon-outer {
+    transform: rotateZ(-180deg);
+}
+
+.button_reset-icon-outer,
+.button_reset-icon-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    scale: 0.8;
+    transition: all ease-in-out 300ms;
+}

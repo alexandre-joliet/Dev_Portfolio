@@ -1,0 +1,42 @@
+.phone_portfolio-activities-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1.5rem;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    list-style-type: circle;
+}
+
+.phone_portfolio_section-activities-title {
+    font-family: "stratum-1-web";
+    font-size: var(--48px);
+}
+
+.phone_portfolio_section-activities-subtitle {
+    font-size: var(--20px);
+}
+
+.phone_portfolio_section-activities-text {
+    font-size: var(--18px);
+    list-style-type: circle;
+}
+
+.phone_portfolio_section-activities-text strong {
+    color: var(--color-accent);
+}
+
+.phone_portfolio_section-activities-text li:last-child {
+    margin-bottom: var(--margin-small);
+}
+
+/***** MEDIA QUERIES *****/
+@media (prefers-reduced-motion) {
+    .phone_portfolio-activities-section {
+        opacity: 1;
+        filter: none;
+        transform: translateX(0);
+    }
+}
