@@ -33,7 +33,11 @@
     bottom: 5rem;
     left: 1.5rem;
     padding: 1rem;
+    max-height: 30rem;
     width: 80%;
+    overflow: auto;
+    scrollbar-color: var(--color-accent) transparent;
+    scrollbar-width: thin;
     transform-origin: bottom left;
     opacity: 0.5;
     scale: 0;
@@ -49,4 +53,23 @@
 .footer_section li {
     list-style-type: circle;
     margin-bottom: var(--margin-small);
+}
+
+/***** MEDIA QUERIES *****/
+@media all and (min-width: 600px) {
+    .footer_sections-container {
+        width: 60%;
+    }
+}
+
+@media all and (min-width: 1000px) {
+    .footer_sections-container {
+        width: 40%;
+    }
+}
+
+@media all and (min-width: 1400px) {
+    .footer_sections-container {
+        width: 30%;
+    }
 }
