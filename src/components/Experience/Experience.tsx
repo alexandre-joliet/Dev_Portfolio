@@ -206,7 +206,7 @@ const Experience = () => {
             <AmbientSound
                 // url="/sound/028301_spaceship-ambience-61038.mp3"
                 url="/sound/password-infinity-123276.mp3"
-                volume={0.25}
+                volume={0.15}
                 loop={true}
             ></AmbientSound>
 
