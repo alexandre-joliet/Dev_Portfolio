@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import useGeneralStore from "../../stores/generalStore";
 import "./Header.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Header = () => {
     //** Logic */
@@ -19,6 +19,7 @@ const Header = () => {
         }
     }, [showHeader]);
 
+    // Contact menu
     const handleContactActions = () => {
         if (showContact) {
             gsap.to(".header_contact-menu-container", {
@@ -43,6 +44,38 @@ const Header = () => {
             });
         }
     }, [showContact]);
+
+    // Handle outside click
+    const contactRef = useRef<HTMLButtonElement>(null);
+    const contactMenuRef = useRef<HTMLDivElement>(null);
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const handleClickOutside = (event: any) => {
+        if (
+            showContact &&
+            contactRef.current &&
+            !contactRef.current.contains(event.target) &&
+            !contactMenuRef.current?.contains(event.target)
+        ) {
+            gsap.to(".header_contact-menu-container", {
+                duration: 0.3,
+                opacity: 0,
+                scale: 0,
+            });
+            setTimeout(() => {
+                setShowContact(false);
+            }, 300);
+
+            // setShowFooter(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("click", handleClickOutside);
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    });
 
     // Sound
     const handleSoundOptions = () => {
@@ -99,6 +132,7 @@ const Header = () => {
                     </button>
 
                     <button
+                        ref={contactRef}
                         className="header_buttons button-mail"
                         onClick={handleContactActions}
                     >
@@ -112,7 +146,10 @@ const Header = () => {
                 </div>
 
                 {showContact && (
-                    <div className="header_contact-menu-container">
+                    <div
+                        ref={contactMenuRef}
+                        className="header_contact-menu-container"
+                    >
                         <div className="contact-menu-item">
                             <a
                                 href="mailto: alexandre.joliet@gmail.com"
