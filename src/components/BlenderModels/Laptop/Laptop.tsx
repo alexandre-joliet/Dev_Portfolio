@@ -49,7 +49,7 @@ const Laptop = () => {
                 laptopIframeRef.current &&
                 laptopIframeRef.current.contentWindow
             ) {
-                console.log(`"Ready to pass": ${useLaptop}`);
+                // console.log(`"Ready to pass": ${useLaptop}`);
                 laptopIframeRef.current.contentWindow.postMessage({
                     type: "UPDATE_DATA",
                     payload: useLaptop,
@@ -99,6 +99,13 @@ const Laptop = () => {
                     (laptopBottom.nodes.AA_laptop_bottom_fix as THREE.Mesh)
                         .position
                 }
+                onPointerEnter={() => {
+                    document.body.style.cursor = "pointer";
+                }}
+                onPointerLeave={() => {
+                    document.body.style.cursor = "default";
+                }}
+                onClick={handleLaptopActions}
             >
                 <meshBasicMaterial map={laptopTexture}></meshBasicMaterial>
             </mesh>
