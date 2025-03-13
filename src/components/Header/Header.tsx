@@ -100,7 +100,7 @@ const Header = () => {
                 {
                     duration: 0,
                     ease: "none",
-                    left: playAmbientSound ? "50%" : "-25%",
+                    left: playAmbientSound ? "50%" : "-35%",
                 },
                 0
             );

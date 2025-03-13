@@ -68,7 +68,6 @@
     align-items: center;
     background-color: transparent;
     border: none;
-    /* border: 2px solid white; */
     border-radius: 50%;
     cursor: pointer;
     outline: none;
@@ -121,23 +120,3 @@
 }
 
 /***** MEDIA QUERIES *****/
-@media all and (min-width: 600px) {
-    /* .button-mail:hover,
-    .btton-mail:active,
-    .button-mail:focus {
-        border-radius: 20px;
-        width: 10rem;
-    } */
-
-    /* .button-mail:hover .icon-mail,
-    .btton-mail:active .icon-mail,
-    .button-mail:focus .icon-mail {
-        left: 20%;
-    } */
-
-    .button-mail:hover .mail-text,
-    .btton-mail:active .mail-text,
-    .button-mail:focus .mail-text {
-        left: 25%;
-    }
-}
