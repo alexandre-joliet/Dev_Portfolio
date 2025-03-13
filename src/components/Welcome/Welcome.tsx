@@ -42,7 +42,8 @@ const Welcome = () => {
                     <span className="welcome_text-accentuation">DEVICE</span>
                 </p>
                 <p className="welcome_text">
-                    Click on the models or use the menu below. For{" "}
+                    Click on the models or use the menu below to navigate
+                    between devices. For{" "}
                     <span className="welcome_text-accentuation">tablets</span>,
                     please choose the phone.
                 </p>
