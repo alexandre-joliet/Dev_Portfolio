@@ -156,7 +156,7 @@ const Header = () => {
                                 target="_blank"
                                 className="header_link"
                             >
-                                <button className="header_buttons">
+                                <button className="header_buttons-menu">
                                     <img
                                         src="/icons/mail_wght400_48.png"
                                         alt=""
@@ -172,11 +172,11 @@ const Header = () => {
                                 target="_blank"
                                 className="header_link"
                             >
-                                <button className="header_buttons">
+                                <button className="header_buttons-menu">
                                     <img
                                         src="/icons/linkedin.png"
                                         alt=""
-                                        className="icon_contact-menu"
+                                        className="icon_contact-menu icon-linkedin"
                                     ></img>
                                 </button>
                             </a>
@@ -188,7 +188,7 @@ const Header = () => {
                                 target="_blank"
                                 className="header_link"
                             >
-                                <button className="header_buttons">
+                                <button className="header_buttons-menu">
                                     <svg
                                         className="icon_contact-menu"
                                         role="img"

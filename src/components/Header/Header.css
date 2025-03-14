@@ -62,7 +62,8 @@
     color: white;
 }
 
-.header_buttons {
+.header_buttons,
+.header_buttons-menu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,6 +72,7 @@
     border-radius: 50%;
     cursor: pointer;
     outline: none;
+    padding: 0;
     position: relative;
     width: 2.75rem;
     height: 2.75rem;
@@ -78,14 +80,24 @@
 }
 
 .header_buttons:hover,
-.header_buttons:focus {
+.header_buttons:focus,
+.header_buttons-menu:hover {
     background-color: var(--color-accent);
 }
 
-.header_icons,
-.icon_contact-menu {
+.header_icons {
     width: 2rem;
     height: 2rem;
+}
+
+.icon_contact-menu {
+    width: 70%;
+    height: 70%;
+}
+
+.icon-linkedin {
+    width: 60%;
+    height: 60%;
 }
 
 .button-mail,
