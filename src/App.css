@@ -129,6 +129,7 @@
     --margin-small: 1rem;
     --margin-medium: 1.5rem;
     --margin-large: 2rem;
+    --margin-xlarge: 3rem;
 
     /** To keep for background of iframe **/
     /* background: linear-gradient(
