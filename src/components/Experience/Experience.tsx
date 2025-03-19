@@ -1,6 +1,7 @@
 import "./Experience.css";
 import * as THREE from "three";
 import gsap from "gsap";
+import { CanvasWrapper } from "@isaac_ua/drei-html-fix"; // import CanvasWrapper
 import { Canvas } from "@react-three/fiber";
 import { CameraControls } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
@@ -55,10 +56,10 @@ const Experience = () => {
         if (cameraRef.current && laptopCameraPosition) {
             // console.log("Camera is moving");
             cameraRef.current.setLookAt(1.1, 1, -0.1, 0, 0.9, -0.1, true);
-            cameraRef.current.minPolarAngle = Math.PI / 2.1;
-            cameraRef.current.maxPolarAngle = Math.PI / 2.05;
-            cameraRef.current.minDistance = 1.1;
-            cameraRef.current.maxDistance = 1.101;
+            // cameraRef.current.minPolarAngle = Math.PI / 2.1;
+            // cameraRef.current.maxPolarAngle = Math.PI / 2.05;
+            // cameraRef.current.minDistance = 1.1;
+            // cameraRef.current.maxDistance = 1.101;
             updateUseLaptop(true);
         }
     }, [laptopCameraPosition, updateUseLaptop]);
@@ -210,54 +211,56 @@ const Experience = () => {
                 loop={true}
             ></AmbientSound>
 
-            <Canvas
-                className={
-                    showLoading
-                        ? "canvas_home"
-                        : "canvas_home canvas_home-visible"
-                }
-                flat
-                camera={cameraSettings}
-                shadows
-                dpr={[1, 2]}
-            >
-                <Suspense fallback={null}>
-                    {/* Scene */}
-                    <color
-                        attach="background"
-                        args={[0, 0, 0]}
-                    />
+            <CanvasWrapper>
+                <Canvas
+                    className={
+                        showLoading
+                            ? "canvas_home"
+                            : "canvas_home canvas_home-visible"
+                    }
+                    flat
+                    camera={cameraSettings}
+                    shadows
+                    dpr={[1, 2]}
+                >
+                    <Suspense fallback={null}>
+                        {/* Scene */}
+                        <color
+                            attach="background"
+                            args={[0, 0, 0]}
+                        />
 
-                    <LightsSettings />
-                    <PostprocessingSettings />
-                    <EnvironmentSettings />
+                        <LightsSettings />
+                        <PostprocessingSettings />
+                        <EnvironmentSettings />
 
-                    {/* Camera */}
-                    <CameraSetup cameraRef={cameraRef} />
-                    <CameraControls
-                        makeDefault
-                        ref={cameraRef}
-                        minPolarAngle={Math.PI / 2.02}
-                        maxPolarAngle={Math.PI / 1.97}
-                        minAzimuthAngle={80 * THREE.MathUtils.DEG2RAD}
-                        maxAzimuthAngle={100 * THREE.MathUtils.DEG2RAD}
-                        smoothTime={1}
-                        minDistance={3.5}
-                        maxDistance={3.501}
-                        infinityDolly={false}
-                        truckSpeed={0}
-                        draggingSmoothTime={0.3}
-                    />
+                        {/* Camera */}
+                        <CameraSetup cameraRef={cameraRef} />
+                        <CameraControls
+                            makeDefault
+                            ref={cameraRef}
+                            minPolarAngle={Math.PI / 2.02}
+                            maxPolarAngle={Math.PI / 1.97}
+                            minAzimuthAngle={80 * THREE.MathUtils.DEG2RAD}
+                            maxAzimuthAngle={100 * THREE.MathUtils.DEG2RAD}
+                            smoothTime={1}
+                            minDistance={3.5}
+                            maxDistance={3.501}
+                            infinityDolly={false}
+                            truckSpeed={0}
+                            draggingSmoothTime={0.3}
+                        />
 
-                    <Scene />
-                    <Laptop />
-                    <Phone />
-                    <Hologram />
-                    <Planet />
-                    <BackgroundPlane />
-                    <Astronaut />
-                </Suspense>
-            </Canvas>
+                        <Scene />
+                        <Laptop />
+                        <Phone />
+                        <Hologram />
+                        <Planet />
+                        <BackgroundPlane />
+                        <Astronaut />
+                    </Suspense>
+                </Canvas>
+            </CanvasWrapper>
             {/* )} */}
 
             {/* Welcome */}
