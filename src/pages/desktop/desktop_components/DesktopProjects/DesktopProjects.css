@@ -1,0 +1,79 @@
+.desktop_portfolio-projects-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: clamp(var(--margin-xlarge), var(--margin-xlarge), 60px);
+    padding: 2.5rem 3rem;
+    width: 60%;
+    opacity: 0;
+    filter: blur(5px);
+}
+
+.desktop_portfolio-projects-title {
+    font-family: "stratum-1-web";
+    font-size: var(--56px);
+}
+
+.desktop_portfolio_projects-card-container {
+    padding-left: 0;
+}
+
+.desktop_portfolio_projects-card {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+    font-family: "Lato";
+    margin-bottom: var(--margin-small);
+    width: 100%;
+}
+
+.desktop_projects-card-image {
+    border-radius: 10px 10px 0 0;
+}
+
+.desktop_projects-card-title {
+    font-family: "stratum-1-web";
+    font-size: var(--22px);
+    font-weight: 700;
+}
+
+.desktop_projects-card-info {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.desktop_projects-card-info .desktop_projects-card-info-text:nth-child(2) {
+    margin-bottom: var(--margin-small);
+}
+
+.desktop_projects-card-info-title {
+    color: var(--color-accent);
+    font-family: "stratum-1-web";
+    font-size: var(--18px);
+    font-weight: 700;
+}
+
+.desktop_projects-card-text {
+    font-family: "Lato";
+    font-size: var(--18px);
+    padding: 0 1rem 1rem 1rem;
+}
+
+.desktop_projects-card-button {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    width: 48px;
+    height: 48px;
+    transition: background-color ease-in-out 300ms;
+}
+
+.desktop_projects-card-button:hover,
+.desktop_projects-card-button:focus {
+    background-color: var(--color-accent);
+}

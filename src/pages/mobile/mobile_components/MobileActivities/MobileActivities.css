@@ -1,0 +1,42 @@
+.mobile_activities-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1.5rem;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    list-style-type: circle;
+}
+
+.mobile_activities-section-title {
+    font-family: "stratum-1-web";
+    font-size: var(--48px);
+}
+
+.mobile_activities-section-subtitle {
+    font-size: var(--20px);
+}
+
+.mobile_activities-section-text {
+    font-size: var(--18px);
+    list-style-type: circle;
+}
+
+.mobile_activities-section-text strong {
+    color: var(--color-accent);
+}
+
+.mobile_activities-section-text li:last-child {
+    margin-bottom: var(--margin-small);
+}
+
+/***** MEDIA QUERIES *****/
+@media (prefers-reduced-motion) {
+    .mobile_activities-section {
+        opacity: 1;
+        filter: none;
+        transform: translateX(0);
+    }
+}

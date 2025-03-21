@@ -1,0 +1,33 @@
+.desktop_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+}
+
+.desktop_nav {
+    display: inherit;
+    gap: 4rem;
+}
+
+.desktop_nav-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: "stratum-1-web";
+    font-size: var(--20px);
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+}
+
+.desktop_nav-button:hover,
+.desktop_nav-button:focus,
+.desktop_nav-button:active,
+.button-about:hover,
+.button-about:focus,
+.button-about:active {
+    color: var(--color-accent);
+}

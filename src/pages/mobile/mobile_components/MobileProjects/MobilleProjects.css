@@ -1,0 +1,78 @@
+.mobile_projects-section {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+}
+
+.mobile_projects-title {
+    font-family: "stratum-1-web";
+    font-size: var(--48px);
+}
+
+.mobile_projects-card-container {
+    padding-left: 0;
+}
+
+.mobile_projects-card {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+    font-family: "Lato";
+    margin-bottom: var(--margin-small);
+    width: 100%;
+}
+
+.mobile_projects-card-image {
+    border-radius: 10px 10px 0 0;
+}
+
+.mobile_projects-card-title {
+    font-family: "stratum-1-web";
+    font-size: var(--22px);
+    font-weight: 700;
+}
+
+.mobile_projects-card-info {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.mobile_projects-card-info .mobile_projects-card-info-text:nth-child(2) {
+    margin-bottom: var(--margin-small);
+}
+
+.mobile_projects-card-info-title {
+    color: var(--color-accent);
+    font-family: "stratum-1-web";
+    font-size: var(--18px);
+    font-weight: 700;
+}
+
+.mobile_projects-card-text {
+    font-family: "Lato";
+    font-size: var(--18px);
+    padding: 0 1rem 1rem 1rem;
+}
+
+.mobile_projects-card-button {
+    background-color: transparent;
+    border: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    width: 48px;
+    height: 48px;
+    transition: background-color ease-in-out 300ms;
+}
+
+.mobile_projects-card-button:hover,
+.mobile_projects-card-button:focus {
+    background-color: var(--color-accent);
+}

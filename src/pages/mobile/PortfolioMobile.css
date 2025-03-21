@@ -1,118 +1,39 @@
-.portfolio_main-wrapper {
-    height: 100vh;
-    width: 100vw;
-    /* padding: 1.5rem; */
-    background: linear-gradient(
+.mobile_portfolio_main {
+    background-image: url("/pictures/background.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: linear-gradient(
         -45deg,
         rgba(46, 56, 68, 1) 0%,
         rgba(20, 27, 35, 1) 100%
-    );
+    ); */
     font-family: "Lato";
     font-weight: 300;
     overflow: auto;
     scrollbar-color: var(--color-accent) transparent;
     scrollbar-width: thin;
     position: relative;
+    min-height: 100vh;
+    width: 100vw;
 }
 
-.phone_portfolio_main-section,
-.phone_portfolio-intro-section {
-    padding: 0 1.5rem;
-    overflow: hidden;
-}
-
-.phone_portfolio_main-title,
-.phone_portfolio_main-title2 {
-    font-size: clamp(56px, 56px, 56px);
-    font-family: "stratum-1-web";
-    line-height: 0.8;
-    height: 3rem;
-    width: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: 2;
-}
-
-.phone_portfolio_main-title {
-    top: 2rem;
-    color: var(--color-accent);
-}
-
-.phone_portfolio_main-title2 {
-    top: 5rem;
-}
-
-.phone_portfolio_main-subtext {
-    font-size: var(--22px);
-    font-weight: 400;
-    position: absolute;
-    overflow: hidden;
-    top: 11rem;
-    height: 2rem;
-    padding-left: 1rem;
-    opacity: 0;
-}
-
-.phone_portfolio-intro-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 15rem;
-}
-
-.phone_portfolio-intro-text {
-    font-size: var(--18px);
-    margin-bottom: 2rem;
-    padding-left: 1rem;
-    opacity: 0;
-}
-
-.phone_portfolio-intro-text:last-of-type {
-    margin-bottom: 4rem;
-}
-
-.phone_portfolio-intro-button {
-    background-color: transparent;
-    border: 2px solid white;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    font-family: "stratum-1-web";
-    font-size: var(--20px);
-    font-weight: 700;
-    padding: 0.5rem;
-    width: 70%;
-    opacity: 0;
-    transition: background-color ease-in-out 300ms;
-}
-
-.phone_portfolio-intro-button:hover {
-    background-color: var(--color-accent);
-}
-
-.phone_portfolio_main-svg-container {
-    position: absolute;
+.mobile_background {
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    background-color: transparent;
+    min-height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+    z-index: 0;
 }
 
-.phone_main-svg_wrapper {
-    position: relative;
-}
-
-.phone_main-svg1,
-.phone_main-svg2 {
-    stroke: var(--color-accent);
-    stroke-width: 0.25;
-    opacity: 0.5;
-    position: absolute;
-    top: 1.25rem;
-    left: 0.5rem;
-}
-
-.phone_main-svg1 {
-    top: 8.5rem;
+.mobile-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 100vh;
+    max-width: 500px;
+    overflow: auto;
 }

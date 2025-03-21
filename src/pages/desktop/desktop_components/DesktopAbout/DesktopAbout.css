@@ -1,0 +1,37 @@
+.desktop_about_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: clamp(var(--margin-xlarge), var(--margin-xlarge), 60px);
+    padding: 2.5rem 3rem;
+    width: 60%;
+    opacity: 0;
+    filter: blur(5px);
+    /* transform: translateX(-100%); */
+}
+
+.desktop_about_section-title {
+    font-family: "stratum-1-web";
+    font-size: var(--56px);
+}
+
+.desktop_about_section-text {
+    font-size: var(--18px);
+    margin-bottom: var(--margin-small);
+}
+
+.desktop_about-text-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto var(--margin-small) auto;
+}
+
+/***** MEDIA QUERIES *****/
+@media (prefers-reduced-motion) {
+    .desktop_about-section {
+        opacity: 1;
+        filter: none;
+        transform: translateX(0);
+    }
+}
