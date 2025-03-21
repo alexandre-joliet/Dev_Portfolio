@@ -83,7 +83,6 @@ const Phone = () => {
             >
                 <meshBasicMaterial map={phoneTexture}></meshBasicMaterial>
             </mesh>
-
             {phoneScreenOn && (
                 <Html
                     transform
@@ -100,8 +99,6 @@ const Phone = () => {
                             className="iframe_phone"
                             ref={phoneIframeRef}
                             src="/portfolio-mobile"
-                            // Prevent iframe from handling pointer events that should go to the 3D scene
-                            onPointerDown={(e) => e.stopPropagation()}
                         ></iframe>
                     </div>
                 </Html>
