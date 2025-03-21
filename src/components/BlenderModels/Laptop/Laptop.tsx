@@ -11,8 +11,11 @@ import useGeneralStore from "../../../stores/generalStore";
 const Laptop = () => {
     //** Debug */
     // const { position, rotation } = useControls({
-    //     position: { value: { x: 0.71, y: 0.835, z: -0.13 }, step: 0.01 },
-    //     rotation: { value: { x: -4.73, y: 0.22, z: 4.81 }, step: 0.001 },
+    //     // position: { value: { x: 0.71, y: 0.835, z: -0.13 }, step: 0.01 },
+    //     // position: { value: { x: 0.121, y: 0.028, z: 0.012 }, step: 0.01 },
+    //     // position: { value: { x: 0.0, y: 0.85, z: -0.12 }, step: 0.01 },
+
+    //     // rotation: { value: { x: -4.73, y: 0.22, z: 4.81 }, step: 0.001 },
     // });
 
     //** Models & Texture */
@@ -161,10 +164,6 @@ const Laptop = () => {
                             .position
                     }
                 >
-                    {/* <mesh>
-                        <sphereGeometry args={[0.1]}></sphereGeometry>
-                        <meshBasicMaterial></meshBasicMaterial>
-                    </mesh> */}
                     <Html
                         transform
                         wrapperClass="htmlLaptopScreen"
