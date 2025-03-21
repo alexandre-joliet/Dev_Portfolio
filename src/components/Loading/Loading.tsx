@@ -10,18 +10,17 @@ type LoadingProps = {
 
 const Loading = ({ setShowLoading }: LoadingProps) => {
     //** Loading details */
+    const [, setItemsToLoad] = useState<number>(0);
     const [itemsLoaded, setItemsLoaded] = useState<number>(0);
     const [allLoaded, setAllLoaded] = useState<boolean>(false);
     const [progress, setProgress] = useState<number>(0);
     const [hasClicked, setHasCliked] = useState<boolean>(false);
     const { updatePlayAmbientSound } = useGeneralStore();
 
-    // console.log(itemsToLoad);
-
     // Loader
     useEffect(() => {
-        THREE.DefaultLoadingManager.onStart = () => {
-            // setItemsToLoad(itemsTotal);
+        THREE.DefaultLoadingManager.onStart = (_, itemsTotal) => {
+            setItemsToLoad(itemsTotal);
             // console.log(`Items total on start: ${itemsTotal}`);
         };
 
@@ -53,28 +52,6 @@ const Loading = ({ setShowLoading }: LoadingProps) => {
         }
     }, [itemsLoaded]);
 
-    useEffect(() => {
-        if (allLoaded) {
-            gsap.to(".screen-content-svg-container", {
-                duration: 2,
-                opacity: 0.25,
-                yoyo: true,
-                repeat: -1,
-            });
-            gsap.to(".loading_screen-loading-text", {
-                duration: 1,
-                ease: "power1.inOut",
-                opacity: 0,
-            });
-            gsap.to(".loading_button-enter", {
-                duration: 1,
-                opacity: 1,
-                ease: "power1.inOut",
-                delay: 0.25,
-            });
-        }
-    }, [allLoaded]);
-
     //** Logic */
     const { updateShowHeader } = useGeneralStore();
 
@@ -96,6 +73,28 @@ const Loading = ({ setShowLoading }: LoadingProps) => {
     const radius = 40;
     const circumference = 2 * Math.PI * radius; // Full circumference
     const strokeDashoffset = circumference - (progress / 100) * circumference; // Offset for progress
+
+    useEffect(() => {
+        if (allLoaded) {
+            gsap.to(".screen-content-svg-container", {
+                duration: 2,
+                opacity: 0.25,
+                yoyo: true,
+                repeat: -1,
+            });
+            gsap.to(".loading_screen-loading-text", {
+                duration: 1,
+                ease: "power1.inOut",
+                opacity: 0,
+            });
+            gsap.to(".loading_button-enter", {
+                duration: 1,
+                opacity: 1,
+                ease: "power1.inOut",
+                delay: 0.25,
+            });
+        }
+    }, [allLoaded]);
 
     return (
         <>
@@ -125,7 +124,8 @@ const Loading = ({ setShowLoading }: LoadingProps) => {
 
                     <div className="loading_screen-progress">
                         <p className="loading_screen-loading-text">
-                            {`${Math.round(progress)}%`}
+                            {/* {`${Math.round(progress)}%`} */}
+                            {`${progress.toFixed(2)}%`}
                         </p>
 
                         {allLoaded && (
