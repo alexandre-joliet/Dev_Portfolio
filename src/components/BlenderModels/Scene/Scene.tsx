@@ -30,7 +30,9 @@ const Scene = () => {
     //** Models */
     const hull = useGLTF("/models/hull.glb");
     const pillars = useGLTF("/models/pillars_draco.glb");
-    const panels = useGLTF("/models/panels_draco.glb");
+    // const panels = useGLTF("/models/panels_draco.glb");
+    const panels = useGLTF("/models/panels_fix_draco.glb");
+
     const blockoutSteps = useGLTF("/models/blockouts_steps_draco.glb");
     const extensionRight = useGLTF("/models/extension_right_draco.glb");
     const wallExtras = useGLTF("/models/wall_extras_draco.glb");
@@ -124,8 +126,8 @@ const Scene = () => {
             </mesh>
 
             <mesh
-                geometry={(panels.nodes.AA_panels as THREE.Mesh).geometry}
-                position={(panels.nodes.AA_panels as THREE.Mesh).position}
+                geometry={(panels.nodes.AA_panels001 as THREE.Mesh).geometry}
+                position={(panels.nodes.AA_panels001 as THREE.Mesh).position}
             >
                 <meshBasicMaterial map={panelsTexture}></meshBasicMaterial>
             </mesh>
