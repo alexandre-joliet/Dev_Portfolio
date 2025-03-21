@@ -1,7 +1,7 @@
 import "./Experience.css";
 import * as THREE from "three";
 import gsap from "gsap";
-import { CanvasWrapper } from "@isaac_ua/drei-html-fix"; // import CanvasWrapper
+// import { CanvasWrapper } from "@isaac_ua/drei-html-fix"; // import CanvasWrapper
 import { Canvas } from "@react-three/fiber";
 import { CameraControls } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
