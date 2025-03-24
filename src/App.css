@@ -105,6 +105,7 @@
     --color-panels-dark: #141b23;
     --color-panels-light: #2e3844;
     --color-accent: #e38a84;
+    --color-iframe-background: #0c141b;
 
     /*** Sizes ***/
     --10px: calc(10rem / 16);
