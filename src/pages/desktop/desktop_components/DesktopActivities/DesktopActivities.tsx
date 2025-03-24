@@ -11,11 +11,11 @@ const DesktopActivities = () => {
     //** Style */
     useEffect(() => {
         if (showActivities) {
-            gsap.to(".desktop_activities_section", {
+            gsap.to(".desktop_activities-section", {
                 duration: 1,
                 opacity: 1,
             });
-            gsap.to(".desktop_activities_section", {
+            gsap.to(".desktop_activities-section", {
                 duration: 1,
                 opacity: 1,
                 filter: "blur(0px)",
@@ -24,10 +24,8 @@ const DesktopActivities = () => {
     }, [showActivities]);
 
     useEffect(() => {
-        console.log(showExitAnimation);
-
         if (showExitAnimation) {
-            gsap.to(".desktop_activities_section", { duration: 1, opacity: 0 });
+            gsap.to(".desktop_activities-section", { duration: 1, opacity: 0 });
             updateShowAnimation("Enter");
         }
     }, [showExitAnimation, updateShowAnimation]);
@@ -35,49 +33,61 @@ const DesktopActivities = () => {
     return (
         <>
             {showActivities && (
-                <section className="desktop_activities_section">
-                    <h2 className="desktop_activities_section-title">
+                <section className="desktop_activities-section">
+                    <h2 className="desktop_activities-section-title">
                         ACTIVITIES
                     </h2>
-                    <h3 className="desktop_activities_section-subtitle">
+                    <h3 className="desktop_activities-section-subtitle">
                         DEVELOPMENT
                     </h3>
-                    <ul className="desktop_activities_section-list">
-                        <li>
+                    <ul className="desktop_activities-section-list">
+                        <li className="desktop_activities-section-listitem">
                             <strong>Creative Developer</strong> - Freelance
-                            <p>2024 - Today</p>
+                            <p className="desktop_activities-section-listitem-date">
+                                2024 - Today
+                            </p>
                         </li>
-                        <li>
+                        <li className="desktop_activities-section-listitem">
                             <strong>Fullstack Web Developer</strong> - Freelance
-                            <p>2023 - Today</p>
+                            <p className="desktop_activities-section-listitem-date">
+                                2023 - Today
+                            </p>
                         </li>
                     </ul>
-                    <h3 className="desktop_activities_section-subtitle">
+                    <h3 className="desktop_activities-section-subtitle">
                         OTHER FIELDS
                     </h3>
-                    <ul className="desktop_activities_section-list">
-                        <li>
+                    <ul className="desktop_activities-section-list">
+                        <li className="desktop_activities-section-listitem">
                             <strong>
                                 Talent, HR Development & Digital Learning
                                 Specialist
                             </strong>{" "}
                             at <strong>Veepee</strong>
-                            <p>2019 - 2023</p>
+                            <p className="desktop_activities-section-listitem-date">
+                                2019 - 2023
+                            </p>
                         </li>
-                        <li>
+                        <li className="desktop_activities-section-listitem">
                             <strong>Training Manager</strong> at{" "}
                             <strong>Veepee</strong>
-                            <p>2017 - 2019</p>
+                            <p className="desktop_activities-section-listitem-date">
+                                2017 - 2019
+                            </p>
                         </li>
-                        <li>
+                        <li className="desktop_activities-section-listitem">
                             <strong>Team Manager</strong> at{" "}
                             <strong>Veepee</strong>
-                            <p>2015 - 2017</p>
+                            <p className="desktop_activities-section-listitem-date">
+                                2015 - 2017
+                            </p>
                         </li>
-                        <li>
+                        <li className="desktop_activities-section-listitem">
                             <strong>Team Manager</strong> at{" "}
                             <strong>UGC</strong> and <strong>H&M</strong>
-                            <p>2011 - 2014</p>
+                            <p className="desktop_activities-section-listitem-date">
+                                2011 - 2014
+                            </p>
                         </li>
                     </ul>
                 </section>

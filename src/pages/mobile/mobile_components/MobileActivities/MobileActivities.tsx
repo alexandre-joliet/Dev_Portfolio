@@ -31,40 +31,52 @@ const MobileActivities = () => {
                 <h3 className="mobile_activities-section-subtitle">
                     DEVELOPMENT
                 </h3>
-                <ul className="mobile_activities-section-text">
-                    <li>
+                <ul className="mobile_activities-section-list">
+                    <li className="mobile_activities-section-listitem">
                         <strong>Creative Developer</strong> - Freelance
-                        <p>2024 - Today</p>
+                        <p className="desktop_activities-section-listitem-date">
+                            2024 - Today
+                        </p>
                     </li>
-                    <li>
+                    <li className="mobile_activities-section-listitem">
                         <strong>Fullstack Web Developer</strong> - Freelance
-                        <p>2023 - Today</p>
+                        <p className="desktop_activities-section-listitem-date">
+                            2023 - Today
+                        </p>
                     </li>
                 </ul>
                 <h3 className="mobile_activities-section-subtitle">
                     OTHER FIELDS
                 </h3>
-                <ul className="mobile_activities-section-text">
-                    <li>
+                <ul className="mobile_activities-section-list">
+                    <li className="mobile_activities-section-listitem">
                         <strong>
                             Talent, HR Development & Digital Learning Specialist
                         </strong>{" "}
                         at <strong>Veepee</strong>
-                        <p>2019 - 2023</p>
+                        <p className="desktop_activities-section-listitem-date">
+                            2019 - 2023
+                        </p>
                     </li>
-                    <li>
+                    <li className="mobile_activities-section-listitem">
                         <strong>Training Manager</strong> at{" "}
                         <strong>Veepee</strong>
-                        <p>2017 - 2019</p>
+                        <p className="desktop_activities-section-listitem-date">
+                            2017 - 2019
+                        </p>
                     </li>
-                    <li>
+                    <li className="mobile_activities-section-listitem">
                         <strong>Team Manager</strong> at <strong>Veepee</strong>
-                        <p>2015 - 2017</p>
+                        <p className="desktop_activities-section-listitem-date">
+                            2015 - 2017
+                        </p>
                     </li>
-                    <li>
+                    <li className="mobile_activities-section-listitem">
                         <strong>Team Manager</strong> at <strong>UGC</strong>{" "}
                         and <strong>H&M</strong>
-                        <p>2011 - 2014</p>
+                        <p className="desktop_activities-section-listitem-date">
+                            2011 - 2014
+                        </p>
                     </li>
                 </ul>
             </section>{" "}
