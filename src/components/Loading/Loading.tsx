@@ -76,23 +76,31 @@ const Loading = ({ setShowLoading }: LoadingProps) => {
 
     useEffect(() => {
         if (allLoaded) {
-            gsap.to(".screen-content-svg-container", {
+            const loadingTimeline = gsap.timeline();
+            loadingTimeline.to(".screen-content-svg-container", {
                 duration: 2,
-                opacity: 0.25,
-                yoyo: true,
-                repeat: -1,
-            });
-            gsap.to(".loading_screen-loading-text", {
-                duration: 1,
-                ease: "power1.inOut",
                 opacity: 0,
+                // yoyo: true,
+                // repeat: -1,
             });
-            gsap.to(".loading_button-enter", {
-                duration: 1,
-                opacity: 1,
-                ease: "power1.inOut",
-                delay: 0.25,
-            });
+            loadingTimeline.to(
+                ".loading_screen-loading-text",
+                {
+                    duration: 1,
+                    ease: "power1.inOut",
+                    opacity: 0,
+                },
+                "<"
+            );
+            loadingTimeline.to(
+                ".loading_button-enter",
+                {
+                    duration: 1,
+                    opacity: 1,
+                    ease: "power1.inOut",
+                },
+                ">-0.6"
+            );
         }
     }, [allLoaded]);
 
@@ -124,8 +132,8 @@ const Loading = ({ setShowLoading }: LoadingProps) => {
 
                     <div className="loading_screen-progress">
                         <p className="loading_screen-loading-text">
-                            {/* {`${Math.round(progress)}%`} */}
-                            {`${progress.toFixed(2)}%`}
+                            {/* {`${progress.toFixed(2)}%`} */}
+                            LOADING
                         </p>
 
                         {allLoaded && (
