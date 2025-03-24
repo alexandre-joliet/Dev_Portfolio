@@ -50,10 +50,11 @@ const MobileAbout = () => {
                     By 2023, though, I realized I was ready for something new—or
                     rather, something old. I decided to return to my first
                     loves: technology and creation. I enrolled in an intensive
-                    six-month bootcamp, honed my skills, and earned my diploma
-                    in early 2024. Now, I’m fully back in the game, doing what
-                    I’ve always been passionate about and ready to help you to
-                    achieve your goals.
+                    six-month bootcamp, honed my skills, and earned my
+                    Javascript FullStack Developer diploma in early 2024. Now,
+                    I’m fully back in the game, doing what I’ve always been
+                    passionate about and ready to help you to achieve your
+                    goals.
                 </p>
             </section>
         </>

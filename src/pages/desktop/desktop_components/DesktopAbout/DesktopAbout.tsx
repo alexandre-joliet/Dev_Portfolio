@@ -24,8 +24,6 @@ const DesktopAbout = () => {
     }, [showAbout]);
 
     useEffect(() => {
-        console.log(showExitAnimation);
-
         if (showExitAnimation) {
             gsap.to(".desktop_about_section", { duration: 1, opacity: 0 });
             updateShowAnimation("Enter");
@@ -71,9 +69,10 @@ const DesktopAbout = () => {
                         new—or rather, something old. I decided to return to my
                         first loves: technology and creation. I enrolled in an
                         intensive six-month bootcamp, honed my skills, and
-                        earned my diploma in early 2024. Now, I’m fully back in
-                        the game, doing what I’ve always been passionate about
-                        and ready to help you to achieve your goals.
+                        earned my Javascript FullStack Developer diploma in
+                        early 2024. Now, I’m fully back in the game, doing what
+                        I’ve always been passionate about and ready to help you
+                        to achieve your goals.
                     </p>
                 </section>
             )}
