@@ -24,8 +24,6 @@ const DesktopSkills = () => {
     }, [showSkills]);
 
     useEffect(() => {
-        console.log(showExitAnimation);
-
         if (showExitAnimation) {
             gsap.to(".desktop_skills_section", { duration: 1, opacity: 0 });
             updateShowAnimation("Enter");

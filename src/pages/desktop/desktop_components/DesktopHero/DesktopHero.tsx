@@ -39,11 +39,6 @@ const DesktopHero = () => {
     //** Style */
 
     useEffect(() => {
-        console.log(showIntro);
-
-        // if (showIntro) {
-        //     gsap.to(".desktop_hero", { duration: 2, opacity: 1, delay: 3 });
-        // }
         if (showIntro) {
             gsap.to(".desktop_hero", { duration: 2, opacity: 1, delay: 3 });
         }

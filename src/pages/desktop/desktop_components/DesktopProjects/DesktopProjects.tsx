@@ -24,8 +24,6 @@ const DesktopProjects = () => {
     }, [showProjects]);
 
     useEffect(() => {
-        console.log(showExitAnimation);
-
         if (showExitAnimation) {
             gsap.to(".desktop_portfolio-projects-section", {
                 duration: 1,
