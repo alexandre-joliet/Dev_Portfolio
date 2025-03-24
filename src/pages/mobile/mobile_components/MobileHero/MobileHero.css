@@ -54,6 +54,7 @@
     background-color: transparent;
     border: 1px solid var(--color-accent);
     border-radius: 100vw;
+    color: white;
     cursor: pointer;
     display: flex;
     justify-content: center;

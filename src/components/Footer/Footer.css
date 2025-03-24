@@ -13,11 +13,19 @@
 .footer_button {
     background-color: transparent;
     border: none;
+    color: white;
     cursor: pointer;
     outline: none;
     font-family: "stratum-1-web";
     font-size: var(--16px);
     padding: 0;
+    transition: all ease-in-out 300ms;
+}
+
+.footer_button:hover,
+.footer_button:active,
+.footer_button:focus {
+    color: var(--color-accent);
 }
 
 .footer_sections-container {
