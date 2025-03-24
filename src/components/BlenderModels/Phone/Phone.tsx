@@ -29,7 +29,8 @@ const Phone = () => {
         updateCameraPosition,
         updateScreenOn,
     } = useCameraStore();
-    const { usePhone, updateUsePhone } = useGeneralStore();
+    const { usePhone, updateUsePhone, updateHideDefaultButton } =
+        useGeneralStore();
 
     const { updateHasClickedCameraMenu } = useGeneralStore();
 
@@ -38,6 +39,7 @@ const Phone = () => {
         updateScreenOn("ON");
         updateHasClickedCameraMenu(true);
         updateUsePhone(true);
+        updateHideDefaultButton(false);
     };
 
     useEffect(() => {

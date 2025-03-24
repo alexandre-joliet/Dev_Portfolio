@@ -38,67 +38,6 @@ const Experience = () => {
 
     const cameraRef = useRef<CameraControls>(null!);
 
-    //** Camera logic */
-    const {
-        defaultCameraPosition,
-        laptopCameraPosition,
-        phoneCameraPosition,
-        updateScreenOn,
-        updateCameraPosition,
-    } = useCameraStore();
-
-    const { updateUsePhone, updateUseLaptop } = useGeneralStore();
-
-    // To laptop
-    useEffect(() => {
-        // console.log(laptopCameraPosition);
-
-        if (cameraRef.current && laptopCameraPosition) {
-            // console.log("Camera is moving");
-            cameraRef.current.setLookAt(1.1, 1, -0.1, 0, 0.9, -0.1, true);
-            cameraRef.current.minPolarAngle = Math.PI / 2.1;
-            cameraRef.current.maxPolarAngle = Math.PI / 2.05;
-            cameraRef.current.minDistance = 1.1;
-            cameraRef.current.maxDistance = 1.101;
-            updateUseLaptop(true);
-        }
-    }, [laptopCameraPosition, updateUseLaptop]);
-
-    // To phone
-    const handlePhoneButtonToggle = () => {
-        updateScreenOn("ON");
-        updateCameraPosition("phone");
-    };
-
-    useEffect(() => {
-        // console.log(phoneCameraPosition);
-
-        if (cameraRef.current && phoneCameraPosition) {
-            // console.log("Camera is moving");
-            cameraRef.current.setLookAt(0.95, 1, 0.17, 0, 0.9, 0.205, true);
-            cameraRef.current.minPolarAngle = Math.PI / 2.145;
-            cameraRef.current.maxPolarAngle = Math.PI / 2.145;
-            cameraRef.current.minAzimuthAngle = 92.1 * THREE.MathUtils.DEG2RAD;
-            cameraRef.current.maxAzimuthAngle = 92.1 * THREE.MathUtils.DEG2RAD;
-            cameraRef.current.minDistance = 0.95;
-            cameraRef.current.maxDistance = 0.951;
-            updateUsePhone(true);
-        }
-    }, [phoneCameraPosition, updateUsePhone]);
-
-    // Default position
-    useEffect(() => {
-        if (cameraRef.current && defaultCameraPosition) {
-            cameraRef.current.setLookAt(3.5, 1, 0, 0, 1, 0, true);
-            cameraRef.current.minPolarAngle = Math.PI / 2.02;
-            cameraRef.current.maxPolarAngle = Math.PI / 1.97;
-            cameraRef.current.minAzimuthAngle = 80 * THREE.MathUtils.DEG2RAD;
-            cameraRef.current.maxAzimuthAngle = 100 * THREE.MathUtils.DEG2RAD;
-            cameraRef.current.minDistance = 3.5;
-            cameraRef.current.maxDistance = 3.501;
-        }
-    }, [defaultCameraPosition]);
-
     //** Logic */
     // Loading screen & welcome message
     const [showLoading, setShowLoading] = useState<boolean>(true);
@@ -200,6 +139,97 @@ const Experience = () => {
         }
     }, [openCameraOptions, showLoading, screenSize.width]);
 
+    //** Camera logic */
+    const {
+        defaultCameraPosition,
+        laptopCameraPosition,
+        phoneCameraPosition,
+        updateScreenOn,
+        updateCameraPosition,
+    } = useCameraStore();
+    const {
+        updateUsePhone,
+        updateUseLaptop,
+        hideDefaultButton,
+        updateHideDefaultButton,
+    } = useGeneralStore();
+
+    // To laptop
+    const handleLaptopButtonToggle = () => {
+        updateCameraPosition("laptop");
+        setOpenCameraOptions(false);
+        updateHideDefaultButton(false);
+    };
+
+    useEffect(() => {
+        // console.log(laptopCameraPosition);
+
+        if (cameraRef.current && laptopCameraPosition) {
+            // console.log("Camera is moving");
+            cameraRef.current.setLookAt(1.1, 1, -0.1, 0, 0.9, -0.1, true);
+            cameraRef.current.minPolarAngle = Math.PI / 2.1;
+            cameraRef.current.maxPolarAngle = Math.PI / 2.05;
+            cameraRef.current.minDistance = 1.1;
+            cameraRef.current.maxDistance = 1.101;
+            updateUseLaptop(true);
+        }
+    }, [laptopCameraPosition, updateUseLaptop]);
+
+    // To phone
+    const handlePhoneButtonToggle = () => {
+        updateScreenOn("ON");
+        updateCameraPosition("phone");
+        setOpenCameraOptions(false);
+        updateHideDefaultButton(false);
+    };
+
+    useEffect(() => {
+        // console.log(phoneCameraPosition);
+
+        if (cameraRef.current && phoneCameraPosition) {
+            // console.log("Camera is moving");
+            cameraRef.current.setLookAt(0.95, 1, 0.17, 0, 0.9, 0.205, true);
+            cameraRef.current.minPolarAngle = Math.PI / 2.145;
+            cameraRef.current.maxPolarAngle = Math.PI / 2.145;
+            cameraRef.current.minAzimuthAngle = 92.1 * THREE.MathUtils.DEG2RAD;
+            cameraRef.current.maxAzimuthAngle = 92.1 * THREE.MathUtils.DEG2RAD;
+            cameraRef.current.minDistance = 0.95;
+            cameraRef.current.maxDistance = 0.951;
+            updateUsePhone(true);
+        }
+    }, [phoneCameraPosition, updateUsePhone]);
+
+    // Default position
+    useEffect(() => {
+        if (cameraRef.current && defaultCameraPosition) {
+            cameraRef.current.setLookAt(3.5, 1, 0, 0, 1, 0, true);
+            cameraRef.current.minPolarAngle = Math.PI / 2.02;
+            cameraRef.current.maxPolarAngle = Math.PI / 1.97;
+            cameraRef.current.minAzimuthAngle = 80 * THREE.MathUtils.DEG2RAD;
+            cameraRef.current.maxAzimuthAngle = 100 * THREE.MathUtils.DEG2RAD;
+            cameraRef.current.minDistance = 3.5;
+            cameraRef.current.maxDistance = 3.501;
+        }
+        // setHideDefaultButton(true);
+    }, [defaultCameraPosition]);
+
+    // Menu Default button
+    useEffect(() => {
+        if (laptopCameraPosition || phoneCameraPosition) {
+            gsap.to(".button_reset", { duration: 1, opacity: 1 });
+            updateHideDefaultButton(false);
+        } else if (defaultCameraPosition && hideDefaultButton === false) {
+            gsap.to(".button_reset", { duration: 1, opacity: 0 });
+            updateHideDefaultButton(true);
+        }
+    }, [
+        laptopCameraPosition,
+        phoneCameraPosition,
+        defaultCameraPosition,
+        hideDefaultButton,
+        updateHideDefaultButton,
+    ]);
+
     return (
         <>
             {showLoading && <Loading setShowLoading={setShowLoading}></Loading>}
@@ -295,7 +325,12 @@ const Experience = () => {
                         </button>
 
                         <button
-                            className="button_reset"
+                            // className="button_reset"
+                            className={
+                                !hideDefaultButton
+                                    ? "button_reset"
+                                    : "button_reset-hidden"
+                            }
                             onClick={() => updateCameraPosition("default")}
                         >
                             <img
@@ -312,7 +347,7 @@ const Experience = () => {
 
                         <button
                             className="button_laptop"
-                            onClick={() => updateCameraPosition("laptop")}
+                            onClick={handleLaptopButtonToggle}
                         >
                             <img
                                 className="button-icon"

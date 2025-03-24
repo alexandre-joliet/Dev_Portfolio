@@ -13,6 +13,8 @@ type GeneralSate = {
     updateUsePhone: (value: boolean) => void;
     useLaptop: boolean;
     updateUseLaptop: (value: boolean) => void;
+    hideDefaultButton: boolean;
+    updateHideDefaultButton: (value: boolean) => void;
 };
 
 const useGeneralStore = create<GeneralSate>((set) => ({
@@ -28,6 +30,8 @@ const useGeneralStore = create<GeneralSate>((set) => ({
     updateUsePhone: (value) => set({ usePhone: value }),
     useLaptop: false,
     updateUseLaptop: (value) => set({ useLaptop: value }),
+    hideDefaultButton: true,
+    updateHideDefaultButton: (value) => set({ hideDefaultButton: value }),
 }));
 
 export default useGeneralStore;

@@ -36,13 +36,18 @@ const Laptop = () => {
 
     //!
     const { laptopCameraPosition, updateCameraPosition } = useCameraStore();
-    const { updateHasClickedCameraMenu, useLaptop, updateUseLaptop } =
-        useGeneralStore();
+    const {
+        updateHasClickedCameraMenu,
+        useLaptop,
+        updateUseLaptop,
+        updateHideDefaultButton,
+    } = useGeneralStore();
 
     const handleLaptopActions = () => {
         updateCameraPosition("laptop");
         updateHasClickedCameraMenu(true);
         updateUseLaptop(true);
+        updateHideDefaultButton(false);
     };
 
     // Pass data to the iframe
