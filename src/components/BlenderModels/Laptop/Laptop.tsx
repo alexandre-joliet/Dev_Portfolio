@@ -34,13 +34,13 @@ const Laptop = () => {
     // const laptopHTMLRef = useRef<HTMLDivElement>(null!);
     const laptopIframeRef = useRef<HTMLIFrameElement>(null!);
 
-    //!
     const { laptopCameraPosition, updateCameraPosition } = useCameraStore();
     const {
         updateHasClickedCameraMenu,
         useLaptop,
         updateUseLaptop,
         updateHideDefaultButton,
+        playAmbientSound,
     } = useGeneralStore();
 
     const handleLaptopActions = () => {
@@ -52,19 +52,32 @@ const Laptop = () => {
 
     // Pass data to the iframe
     useEffect(() => {
-        setTimeout(() => {
-            if (
-                laptopIframeRef.current &&
-                laptopIframeRef.current.contentWindow
-            ) {
-                // console.log(`"Ready to pass": ${useLaptop}`);
-                laptopIframeRef.current.contentWindow.postMessage({
-                    type: "UPDATE_DATA",
-                    payload: useLaptop,
-                });
-            }
-        }, 1000);
+        const payload = {
+            type: "UPDATE_DATA",
+            laptop: useLaptop,
+        };
+
+        if (laptopIframeRef.current && laptopIframeRef.current.contentWindow) {
+            // console.log(`"Ready to pass": ${useLaptop}`);
+            laptopIframeRef.current.contentWindow.postMessage({
+                payload,
+            });
+        }
     }, [useLaptop]);
+
+    useEffect(() => {
+        const payload = {
+            type: "UPDATE_DATA",
+            sound: playAmbientSound,
+        };
+
+        if (laptopIframeRef.current && laptopIframeRef.current.contentWindow) {
+            // console.log(`"Ready to pass": ${useLaptop}`);
+            laptopIframeRef.current.contentWindow.postMessage({
+                payload,
+            });
+        }
+    }, [playAmbientSound]);
 
     useEffect(() => {
         // if (laptopRef.current !== null) {
@@ -86,9 +99,10 @@ const Laptop = () => {
             });
 
             gsap.to(".htmlLaptopScreen iframe", {
-                duration: 6,
+                duration: 4,
                 ease: "power2.inOut",
                 opacity: 1,
+                delay: 1,
             });
 
             // console.log("Laptop ouvert");

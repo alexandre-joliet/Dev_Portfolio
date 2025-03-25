@@ -32,7 +32,7 @@ const Phone = () => {
     const { usePhone, updateUsePhone, updateHideDefaultButton } =
         useGeneralStore();
 
-    const { updateHasClickedCameraMenu } = useGeneralStore();
+    const { updateHasClickedCameraMenu, playAmbientSound } = useGeneralStore();
 
     const handlePhoneActions = () => {
         updateCameraPosition("phone");
@@ -56,19 +56,37 @@ const Phone = () => {
 
     // Pass data to the iframe
     useEffect(() => {
+        const payload = {
+            type: "UPDATE_DATA",
+            phone: usePhone,
+        };
+
         setTimeout(() => {
             if (
                 phoneIframeRef.current &&
                 phoneIframeRef.current.contentWindow
             ) {
-                console.log(`"Ready to pass": ${usePhone}`);
+                // console.log(`"Ready to pass": ${usePhone}`);
                 phoneIframeRef.current.contentWindow.postMessage({
-                    type: "UPDATE_DATA",
-                    payload: usePhone,
+                    payload,
                 });
             }
         }, 1000);
     }, [usePhone]);
+
+    useEffect(() => {
+        const payload = {
+            type: "UPDATE_DATA",
+            sound: playAmbientSound,
+        };
+
+        if (phoneIframeRef.current && phoneIframeRef.current.contentWindow) {
+            // console.log(`"Ready to pass": ${useLaptop}`);
+            phoneIframeRef.current.contentWindow.postMessage({
+                payload,
+            });
+        }
+    }, [playAmbientSound]);
 
     return (
         <>

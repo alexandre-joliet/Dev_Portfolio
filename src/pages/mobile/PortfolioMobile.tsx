@@ -11,15 +11,28 @@ import MobileProjects from "./mobile_components/MobileProjects/MobileProjects";
 
 const PortfolioMobile = () => {
     //** Logic */
-    const { updateUsePhone } = useGeneralStore();
-    const { showIntro } = useIframeStore();
+    const { updateUsePhone, updatePlayAmbientSound } = useGeneralStore();
+    const { showMobileIntro } = useIframeStore();
 
     // Receive data from parent
     useEffect(() => {
         const handleMessage = (event: MessageEvent) => {
-            if (event.data.type === "UPDATE_DATA") {
-                // console.log(event);
-                updateUsePhone(event.data.payload); // Update Zustand store in iframe
+            // console.log(event.data.payload);
+            if (
+                event.data.payload?.type === "UPDATE_DATA" &&
+                "phone" in event.data.payload
+            ) {
+                // Update Zustand store in iframe
+                updateUsePhone(event.data.payload.phone);
+                updatePlayAmbientSound(event.data.payload.phone);
+            }
+
+            if (
+                event.data.payload?.type === "UPDATE_DATA" &&
+                "sound" in event.data.payload
+            ) {
+                // Update Zustand store in iframe
+                updatePlayAmbientSound(event.data.payload.sound);
             }
         };
 
@@ -29,20 +42,20 @@ const PortfolioMobile = () => {
 
     //** Style */
     useEffect(() => {
-        if (!showIntro) {
+        if (!showMobileIntro) {
             gsap.to(".mobile_background", {
                 duration: 2,
                 backgroundColor: "rgba(0, 0, 0, 0.5)",
             });
         }
-    }, [showIntro]);
+    }, [showMobileIntro]);
 
     return (
         <>
             <main className="mobile_portfolio_main">
                 <div className="mobile_background"></div>
-                {showIntro && <MobileHero />}
-                {!showIntro && (
+                {showMobileIntro && <MobileHero />}
+                {!showMobileIntro && (
                     <div className="mobile-content-wrapper">
                         <MobileAbout />
                         <MobileActivities />

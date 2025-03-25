@@ -5,9 +5,41 @@ import DesktopAbout from "./desktop_components/DesktopAbout/DesktopAbout";
 import DesktopActivities from "./desktop_components/DesktopActivities/DesktopActivities";
 import DesktopSkills from "./desktop_components/DesktopSkills/DesktopSkills";
 import DesktopProjects from "./desktop_components/DesktopProjects/DesktopProjects";
+import { useEffect } from "react";
+import useGeneralStore from "../../stores/generalStore";
+import useIframeStore from "../../stores/iframeStore";
 // import DesktopCanvas from "./desktop_components/DesktopCanvas/DesktopCanvas";
 
 const PortfolioDesktop = () => {
+    const { updateUseLaptop, updatePlayAmbientSound } = useGeneralStore();
+    const { updateShowDesktopIntro } = useIframeStore();
+
+    // Receive data from parent
+    useEffect(() => {
+        const handleMessage = (event: MessageEvent) => {
+            // console.log(event.data.payload);
+            if (
+                event.data.payload?.type === "UPDATE_DATA" &&
+                "laptop" in event.data.payload
+            ) {
+                // Update Zustand store in iframe
+                updateUseLaptop(event.data.payload.laptop);
+                updateShowDesktopIntro(event.data.payload.laptop);
+            }
+
+            if (
+                event.data.payload?.type === "UPDATE_DATA" &&
+                "sound" in event.data.payload
+            ) {
+                // Update Zustand store in iframe
+                updatePlayAmbientSound(event.data.payload.sound);
+            }
+        };
+
+        window.addEventListener("message", handleMessage);
+        return () => window.removeEventListener("message", handleMessage);
+    });
+
     return (
         <>
             <main className="destkop_portfolio_main">
