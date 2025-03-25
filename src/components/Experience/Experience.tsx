@@ -21,6 +21,8 @@ import BackgroundPlane from "../Extras/BackgroundPlane/BackgroundPlane.tsx";
 import Astronaut from "../Extras/Astronaut/Astronaut.tsx";
 import Loading from "../Loading/Loading.tsx";
 import Welcome from "../Welcome/Welcome.tsx";
+import useHoverSound from "../Extras/SoundEffects/hoverSound.tsx";
+import useClickSound from "../Extras/SoundEffects/clickSound.tsx";
 
 const Experience = () => {
     //** Camera settings & movements */
@@ -42,6 +44,8 @@ const Experience = () => {
     // Loading screen & welcome message
     const [showLoading, setShowLoading] = useState<boolean>(true);
     const { showWelcome } = useGeneralStore();
+    const playHoverSound = useHoverSound();
+    const playClickSound = useClickSound();
 
     useEffect(() => {
         if (!showLoading) {
@@ -83,6 +87,7 @@ const Experience = () => {
     });
 
     const handleOpenCameraOptions = () => {
+        playClickSound();
         if (!openCameraOptions) {
             setOpenCameraOptions(true);
             updateHasClickedCameraMenu(true);
@@ -156,6 +161,7 @@ const Experience = () => {
 
     // To laptop
     const handleLaptopButtonToggle = () => {
+        playClickSound();
         updateCameraPosition("laptop");
         setOpenCameraOptions(false);
         updateHideDefaultButton(false);
@@ -177,6 +183,7 @@ const Experience = () => {
 
     // To phone
     const handlePhoneButtonToggle = () => {
+        playClickSound();
         updateScreenOn("ON");
         updateCameraPosition("phone");
         setOpenCameraOptions(false);
@@ -200,6 +207,11 @@ const Experience = () => {
     }, [phoneCameraPosition, updateUsePhone]);
 
     // Default position
+    const handeDefaultButtonToggle = () => {
+        playClickSound();
+        updateCameraPosition("default");
+    };
+
     useEffect(() => {
         if (cameraRef.current && defaultCameraPosition) {
             cameraRef.current.setLookAt(3.5, 1, 0, 0, 1, 0, true);
@@ -236,7 +248,7 @@ const Experience = () => {
 
             <AmbientSound
                 // url="/sound/028301_spaceship-ambience-61038.mp3"
-                url="/sound/password-infinity-123276.mp3"
+                url="/sounds/password-infinity-123276.mp3"
                 volume={0.15}
                 loop={true}
             ></AmbientSound>
@@ -303,7 +315,10 @@ const Experience = () => {
                         className="camera_buttons-toggle"
                         onClick={handleOpenCameraOptions}
                     >
-                        <div className="buttons-toggle-action">
+                        <div
+                            className="buttons-toggle-action"
+                            onMouseEnter={playHoverSound}
+                        >
                             <img
                                 className="toggle-action-icon"
                                 src="/icons/expand_circle1_wght200_48.png"
@@ -315,6 +330,7 @@ const Experience = () => {
                     <div className="camera_buttons_container">
                         <button
                             className="button_phone"
+                            onMouseEnter={playHoverSound}
                             onClick={handlePhoneButtonToggle}
                         >
                             <img
@@ -331,7 +347,8 @@ const Experience = () => {
                                     ? "button_reset"
                                     : "button_reset-hidden"
                             }
-                            onClick={() => updateCameraPosition("default")}
+                            onMouseEnter={playHoverSound}
+                            onClick={handeDefaultButtonToggle}
                         >
                             <img
                                 className="button_reset-icon-outer"
@@ -347,6 +364,7 @@ const Experience = () => {
 
                         <button
                             className="button_laptop"
+                            onMouseEnter={playHoverSound}
                             onClick={handleLaptopButtonToggle}
                         >
                             <img

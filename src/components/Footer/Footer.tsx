@@ -2,11 +2,15 @@ import "./Footer.css";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import useGeneralStore from "../../stores/generalStore";
+import useHoverSound from "../Extras/SoundEffects/hoverSound";
+import useClickSound from "../Extras/SoundEffects/clickSound";
 
 const Footer = () => {
     //** Logic */
     const { showHeader } = useGeneralStore();
     const [showFooter, setShowFooter] = useState<boolean>(false);
+    const playHoverSound = useHoverSound();
+    const playClickSound = useClickSound();
 
     useEffect(() => {
         if (showHeader) {
@@ -19,6 +23,7 @@ const Footer = () => {
     }, [showHeader]);
 
     const handleFooterActions = () => {
+        playClickSound();
         if (showFooter) {
             gsap.to(".footer_sections-container", {
                 duration: 0.4,
@@ -83,6 +88,7 @@ const Footer = () => {
             >
                 <button
                     className="footer_button"
+                    onMouseEnter={playHoverSound}
                     onClick={handleFooterActions}
                 >
                     Legal terms
@@ -130,6 +136,10 @@ const Footer = () => {
                                     Evgeny_Bardyuzha
                                 </a>
                                 &nbsp;under Pixabay Content License
+                            </li>
+                            <li>
+                                Sound effects by Mixkit under Mixkit Sound
+                                Effects Free License
                             </li>
                         </ul>
                     </section>

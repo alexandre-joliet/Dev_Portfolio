@@ -1,13 +1,17 @@
-import gsap from "gsap";
-import useGeneralStore from "../../stores/generalStore";
 import "./Header.css";
+import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
+import useGeneralStore from "../../stores/generalStore";
+import useHoverSound from "../Extras/SoundEffects/hoverSound";
+import useClickSound from "../Extras/SoundEffects/clickSound";
 
 const Header = () => {
     //** Logic */
     const { showHeader, playAmbientSound, updatePlayAmbientSound } =
         useGeneralStore();
     const [showContact, setShowContact] = useState(false);
+    const playHoverSound = useHoverSound();
+    const playClickSound = useClickSound();
 
     useEffect(() => {
         if (showHeader) {
@@ -21,6 +25,7 @@ const Header = () => {
 
     // Contact menu
     const handleContactActions = () => {
+        playClickSound();
         if (showContact) {
             gsap.to(".header_contact-menu-container", {
                 duration: 0.3,
@@ -117,6 +122,7 @@ const Header = () => {
                 <div className="header_icons-container">
                     <button
                         className="header_buttons button-sound"
+                        onMouseEnter={playHoverSound}
                         onClick={handleSoundOptions}
                     >
                         <img
@@ -134,6 +140,7 @@ const Header = () => {
                     <button
                         ref={contactRef}
                         className="header_buttons button-mail"
+                        onMouseEnter={playHoverSound}
                         onClick={handleContactActions}
                     >
                         <img
@@ -150,7 +157,10 @@ const Header = () => {
                         ref={contactMenuRef}
                         className="header_contact-menu-container"
                     >
-                        <div className="contact-menu-item">
+                        <div
+                            className="contact-menu-item"
+                            onMouseEnter={playHoverSound}
+                        >
                             <a
                                 href="mailto: alexandre.joliet@gmail.com"
                                 target="_blank"
@@ -166,7 +176,10 @@ const Header = () => {
                             </a>
                             {/* <p className="">Mail</p> */}
                         </div>
-                        <div className="contact-menu-item">
+                        <div
+                            className="contact-menu-item"
+                            onMouseEnter={playHoverSound}
+                        >
                             <a
                                 href="https://www.linkedin.com/in/alexandrejoliet/"
                                 target="_blank"
@@ -182,7 +195,10 @@ const Header = () => {
                             </a>
                             {/* <p className="">Linkedin</p> */}
                         </div>
-                        <div className="contact-menu-item">
+                        <div
+                            className="contact-menu-item"
+                            onMouseEnter={playHoverSound}
+                        >
                             <a
                                 href="https://github.com/alexandre-joliet"
                                 target="_blank"
