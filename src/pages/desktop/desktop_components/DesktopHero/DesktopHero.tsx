@@ -7,7 +7,8 @@ import useClickSound from "../../../../components/Extras/SoundEffects/clickSound
 
 const DesktopHero = () => {
     //** Logic */
-    const { showDesktopIntro, updateShowPage } = useIframeStore();
+    const { showDesktopIntro, updateShowDesktopIntro, updateShowPage } =
+        useIframeStore();
     const playHoverSound = useHoverSound();
     const playClickSound = useClickSound();
 
@@ -19,6 +20,7 @@ const DesktopHero = () => {
             delay: 0.3,
         });
         setTimeout(() => {
+            updateShowDesktopIntro(false);
             updateShowPage("About");
         }, 1250);
     };
