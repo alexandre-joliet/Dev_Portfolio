@@ -2,12 +2,17 @@ import "./MobileHero.css";
 import { useEffect } from "react";
 import gsap from "gsap";
 import useIframeStore from "../../../../stores/iframeStore";
+import useHoverSound from "../../../../components/Extras/SoundEffects/hoverSound";
+import useClickSound from "../../../../components/Extras/SoundEffects/clickSound";
 
 const MobileHero = () => {
     //** Logic */
-    const { showIntro, updateShowIntro } = useIframeStore();
+    const { showMobileIntro, updateShowMobileIntro } = useIframeStore();
+    const playHoverSound = useHoverSound();
+    const playClickSound = useClickSound();
 
     const handleIntroButton = () => {
+        playClickSound();
         gsap.to(".mobile_hero_section", {
             duration: 1,
             opacity: 0,
@@ -15,21 +20,21 @@ const MobileHero = () => {
         });
 
         setTimeout(() => {
-            updateShowIntro(false);
+            updateShowMobileIntro(false);
         }, 1500);
     };
 
     //** Style */
     // Intro
     useEffect(() => {
-        if (showIntro) {
+        if (showMobileIntro) {
             gsap.to(".mobile_hero_section", {
                 duration: 2,
                 opacity: 1,
                 delay: 3,
             });
         }
-    }, [showIntro]);
+    }, [showMobileIntro]);
 
     return (
         <>
@@ -43,6 +48,7 @@ const MobileHero = () => {
 
                 <button
                     className="mobile_hero-button"
+                    onMouseEnter={playHoverSound}
                     onClick={handleIntroButton}
                 >
                     START

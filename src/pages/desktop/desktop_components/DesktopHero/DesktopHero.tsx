@@ -1,31 +1,18 @@
 import "./DesktopHero.css";
 import { useEffect } from "react";
 import gsap from "gsap";
-import useGeneralStore from "../../../../stores/generalStore";
 import useIframeStore from "../../../../stores/iframeStore";
+import useHoverSound from "../../../../components/Extras/SoundEffects/hoverSound";
+import useClickSound from "../../../../components/Extras/SoundEffects/clickSound";
 
 const DesktopHero = () => {
     //** Logic */
-    const { updateUseLaptop } = useGeneralStore();
-    const { showIntro, updateShowIntro, updateShowPage } = useIframeStore();
-
-    // Receive data from parent
-    useEffect(() => {
-        const handleMessage = (event: MessageEvent) => {
-            if (event.data.type === "UPDATE_DATA") {
-                // console.log(event);
-
-                // Update Zustand store in iframe
-                updateUseLaptop(event.data.payload);
-                updateShowIntro(event.data.payload);
-            }
-        };
-
-        window.addEventListener("message", handleMessage);
-        return () => window.removeEventListener("message", handleMessage);
-    });
+    const { showDesktopIntro, updateShowPage } = useIframeStore();
+    const playHoverSound = useHoverSound();
+    const playClickSound = useClickSound();
 
     const handleStartActions = () => {
+        playClickSound();
         gsap.to(".desktop_hero-container", {
             duration: 1,
             opacity: 0,
@@ -39,14 +26,14 @@ const DesktopHero = () => {
     //** Style */
 
     useEffect(() => {
-        if (showIntro) {
+        if (showDesktopIntro) {
             gsap.to(".desktop_hero", { duration: 2, opacity: 1, delay: 3 });
         }
-    }, [showIntro]);
+    }, [showDesktopIntro]);
 
     return (
         <>
-            {showIntro && (
+            {showDesktopIntro && (
                 <div className="desktop_hero-container">
                     <section className="desktop_hero">
                         <h1 className="desktop_hero-title">HELLO</h1>
@@ -58,6 +45,7 @@ const DesktopHero = () => {
                         </p>
                         <button
                             className="desktop_hero-button"
+                            onMouseEnter={playHoverSound}
                             onClick={handleStartActions}
                         >
                             START

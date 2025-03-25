@@ -1,12 +1,14 @@
-import { useEffect } from "react";
-import useIframeStore from "../../../../stores/iframeStore";
 import "./DesktopHeader.css";
+import { useEffect } from "react";
 import gsap from "gsap";
+import useIframeStore from "../../../../stores/iframeStore";
+import useHoverSound from "../../../../components/Extras/SoundEffects/hoverSound";
+import useClickSound from "../../../../components/Extras/SoundEffects/clickSound";
 
 const DesktopHeader = () => {
     //** Logic */
     const {
-        showIntro,
+        showDesktopIntro,
         showAbout,
         showActivities,
         showProjects,
@@ -14,8 +16,11 @@ const DesktopHeader = () => {
         updateShowPage,
         updateShowAnimation,
     } = useIframeStore();
+    const playHoverSound = useHoverSound();
+    const playClickSound = useClickSound();
 
     const handleHeaderButtonAbout = () => {
+        playClickSound();
         updateShowAnimation("Exit");
         setTimeout(() => {
             updateShowPage("About");
@@ -23,6 +28,7 @@ const DesktopHeader = () => {
     };
 
     const handleHeaderButtonActivities = () => {
+        playClickSound();
         updateShowAnimation("Exit");
         setTimeout(() => {
             updateShowPage("Activities");
@@ -30,6 +36,7 @@ const DesktopHeader = () => {
     };
 
     const handleHeaderButtonProjects = () => {
+        playClickSound();
         updateShowAnimation("Exit");
         setTimeout(() => {
             updateShowPage("Projects");
@@ -37,6 +44,7 @@ const DesktopHeader = () => {
     };
 
     const handleHeaderButtonSkills = () => {
+        playClickSound();
         updateShowAnimation("Exit");
         setTimeout(() => {
             updateShowPage("Skills");
@@ -45,13 +53,13 @@ const DesktopHeader = () => {
 
     //** Syle */
     useEffect(() => {
-        if (!showIntro) {
+        if (!showDesktopIntro) {
             gsap.to(".desktop_header", { duration: 2, opacity: 1, delay: 0.5 });
         }
-    }, [showIntro]);
+    }, [showDesktopIntro]);
 
     useEffect(() => {
-        if (!showIntro) {
+        if (!showDesktopIntro) {
             if (showAbout) {
                 gsap.to(".button-about", { color: "var(--color-accent" });
             } else {
@@ -76,35 +84,37 @@ const DesktopHeader = () => {
                 gsap.to(".button-skills", { color: "" });
             }
         }
-    }, [showIntro, showAbout, showActivities, showProjects, showSkills]);
+    }, [showDesktopIntro, showAbout, showActivities, showProjects, showSkills]);
 
     return (
         <>
-            {!showIntro && (
+            {!showDesktopIntro && (
                 <header className="desktop_header">
                     <nav className="desktop_nav">
                         <button
                             className="desktop_nav-button button-about"
-                            // onClick={() => updateShowPage("About")}
+                            onMouseEnter={playHoverSound}
                             onClick={handleHeaderButtonAbout}
                         >
                             ABOUT
                         </button>
                         <button
                             className="desktop_nav-button button-activities"
-                            // onClick={() => updateShowPage("Activities")}
+                            onMouseEnter={playHoverSound}
                             onClick={handleHeaderButtonActivities}
                         >
                             ACTIVITIES
                         </button>
                         <button
                             className="desktop_nav-button button-skills"
+                            onMouseEnter={playHoverSound}
                             onClick={handleHeaderButtonSkills}
                         >
                             SKILLS
                         </button>
                         <button
                             className="desktop_nav-button button-projects"
+                            onMouseEnter={playHoverSound}
                             onClick={handleHeaderButtonProjects}
                         >
                             PROJECTS
