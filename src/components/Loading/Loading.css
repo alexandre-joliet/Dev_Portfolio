@@ -56,12 +56,13 @@
 }
 
 .loading_screen-loading-text {
-    font-size: 1.75rem;
+    font-size: var(--32px);
+    font-weight: 700;
     position: absolute;
 }
 
 .loading_button-enter {
-    font-size: 1.5rem;
+    font-size: var(--24px);
     font-weight: 700;
     text-align: center;
     background-color: transparent;
