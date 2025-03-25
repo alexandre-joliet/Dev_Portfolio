@@ -1,3 +1,24 @@
+.welcome_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    mask-image: radial-gradient(
+        circle at 50% 55%,
+        rgba(0, 0, 0, 0) 30%,
+        rgba(0, 0, 0, 1) 40%
+    );
+    -webkit-mask-image: radial-gradient(
+        circle at 50% 55%,
+        rgba(0, 0, 0, 0) 30%,
+        rgba(0, 0, 0, 1) 40%
+    );
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    opacity: 0;
+}
+
 .welcome_container {
     position: absolute;
     bottom: 5rem;
@@ -27,21 +48,57 @@
     color: var(--color-accent);
 }
 
-.welcome_icon-arrow {
-    width: 2rem;
-    height: 2rem;
-    margin: auto;
+.welcome_button {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 100vw;
+    cursor: pointer;
+    font-size: var(--18px);
+    font-weight: 700;
+    padding: 0.25rem 1.5rem;
+    transition: all ease-in-out 300ms;
 }
 
-.down {
-    rotate: 180deg;
+.welcome_button:hover,
+.welcome_button:active,
+.welcome_button:focus {
+    background-color: var(--color-accent);
+    border: 1px solid var(--color-accent);
 }
 
 /***** MEDIA QUERIES *****/
 /* Width */
+@media all and (min-width: 400px) {
+    .welcome_background {
+        mask-image: radial-gradient(
+            circle at 50% 55%,
+            rgba(0, 0, 0, 0) 28%,
+            rgba(0, 0, 0, 1) 35%
+        );
+        -webkit-mask-image: radial-gradient(
+            circle at 50% 55%,
+            rgba(0, 0, 0, 0) 28%,
+            rgba(0, 0, 0, 1) 35%
+        );
+    }
+}
+
 @media all and (min-width: 800px) {
     .welcome_container {
         width: 50%;
+    }
+
+    .welcome_background {
+        mask-image: radial-gradient(
+            circle at 50% 55%,
+            rgba(0, 0, 0, 0) 25%,
+            rgba(0, 0, 0, 1) 35%
+        );
+        -webkit-mask-image: radial-gradient(
+            circle at 50% 55%,
+            rgba(0, 0, 0, 0) 25%,
+            rgba(0, 0, 0, 1) 35%
+        );
     }
 }
 
@@ -55,9 +112,41 @@
     .welcome_container {
         width: 30%;
     }
+
+    .welcome_background {
+        mask-image: radial-gradient(
+            ellipse at 50% 55%,
+            rgba(0, 0, 0, 0) 25%,
+            rgba(0, 0, 0, 1) 35%
+        );
+        -webkit-mask-image: radial-gradient(
+            ellipse at 50% 55%,
+            rgba(0, 0, 0, 0) 25%,
+            rgba(0, 0, 0, 1) 35%
+        );
+    }
 }
 
 @media all and (min-width: 1600px) {
+    .welcome_container {
+        width: 25%;
+    }
+
+    .welcome_background {
+        mask-image: radial-gradient(
+            ellipse at 50% 55%,
+            rgba(0, 0, 0, 0) 20%,
+            rgba(0, 0, 0, 1) 30%
+        );
+        -webkit-mask-image: radial-gradient(
+            ellipse at 50% 55%,
+            rgba(0, 0, 0, 0) 20%,
+            rgba(0, 0, 0, 1) 30%
+        );
+    }
+}
+
+@media all and (min-width: 1800px) {
     .welcome_container {
         width: 20%;
     }
@@ -66,31 +155,31 @@
 /* Height */
 @media all and (min-height: 775px) and (max-height: 875px) {
     .welcome_container {
-        bottom: 8rem;
+        bottom: 6rem;
     }
 }
 
 @media all and (min-height: 876px) and (max-height: 975px) {
     .welcome_container {
-        bottom: 10rem;
+        bottom: 7rem;
     }
 }
 
 @media all and (min-height: 976px) and (max-height: 1175px) {
     .welcome_container {
-        bottom: 12rem;
+        bottom: 8rem;
     }
 }
 
 @media all and (min-height: 1176px) and (max-height: 1375px) {
     .welcome_container {
-        bottom: 16rem;
+        bottom: 12rem;
     }
 }
 
 @media all and (min-height: 1376px) {
     .welcome_container {
-        bottom: 20rem;
+        bottom: 15rem;
     }
 }
 
