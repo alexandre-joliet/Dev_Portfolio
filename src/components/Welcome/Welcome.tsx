@@ -1,24 +1,49 @@
 import "./Welcome.css";
-import useGeneralStore from "../../stores/generalStore";
 import { useEffect } from "react";
 import gsap from "gsap";
+import useGeneralStore from "../../stores/generalStore";
+import useHoverSound from "../Extras/SoundEffects/hoverSound";
+import useClickSound from "../Extras/SoundEffects/clickSound";
 
 const Welcome = () => {
-    const { showWelcome, updateShowWelcome, hasClickedCameraMenu } =
-        useGeneralStore();
+    //** Logic */
+    const {
+        showWelcome,
+        updateShowWelcome,
+        hasClickedCameraMenu,
+        updateHasClickedCameraMenu,
+    } = useGeneralStore();
+    const playHoverSound = useHoverSound();
+    const playClickSound = useClickSound();
 
+    const handleWelcomeButtonToogle = () => {
+        playClickSound();
+        updateHasClickedCameraMenu(true);
+    };
+
+    //** Style */
     useEffect(() => {
         if (showWelcome) {
             gsap.to(".welcome_container", {
                 duration: 2,
                 ease: "power2.inOut",
                 opacity: 1,
-                delay: 1,
+                delay: 2.5,
+            });
+            gsap.to(".welcome_background", {
+                duration: 2,
+                opacity: 1,
+                delay: 2.5,
             });
         }
 
         if (hasClickedCameraMenu) {
             gsap.to(".welcome_container", {
+                duration: 1,
+                opacity: 0,
+                delay: 0.3,
+            });
+            gsap.to(".welcome_background", {
                 duration: 1,
                 opacity: 0,
                 delay: 0.3,
@@ -31,27 +56,27 @@ const Welcome = () => {
 
     return (
         <>
+            <div className="welcome_background"></div>
             <div className="welcome_container">
-                {/* <img
-                    src="./icons/arrow_up.png"
-                    alt=""
-                    className="welcome_icon-arrow up"
-                ></img> */}
                 <p className="welcome_title">
                     SELECT YOUR{" "}
                     <span className="welcome_text-accentuation">DEVICE</span>
                 </p>
                 <p className="welcome_text">
-                    Click on the models or use the menu below to navigate
-                    between devices. For{" "}
+                    Choose the phone or the computer, or use the menu below to
+                    navigate between them. For{" "}
                     <span className="welcome_text-accentuation">tablets</span>,
-                    please choose the phone.
+                    please choose the phone. When ready, click the button below
+                    to continue.
                 </p>
-                {/* <img
-                    src="./icons/arrow_up.png"
-                    alt=""
-                    className="welcome_icon-arrow down"
-                ></img> */}
+
+                <button
+                    className="welcome_button"
+                    onMouseEnter={playHoverSound}
+                    onClick={handleWelcomeButtonToogle}
+                >
+                    OK
+                </button>
             </div>
         </>
     );
