@@ -6,7 +6,7 @@
     /* background-color: rgba(0, 0, 0, 0.1); */
     /* box-shadow: 10px 10px 20px 3px rgba(46, 56, 68, 0.5); */
     border-radius: 25px;
-    padding: 2.5rem 3rem;
+    padding: 0 3rem 2.5rem 3rem;
     margin-bottom: var(--margin-large);
     width: 100%;
     overflow: hidden;
