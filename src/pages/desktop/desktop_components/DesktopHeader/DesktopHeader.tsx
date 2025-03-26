@@ -21,40 +21,52 @@ const DesktopHeader = () => {
 
     const handleHeaderButtonAbout = () => {
         playClickSound();
-        updateShowAnimation("Exit");
-        setTimeout(() => {
-            updateShowPage("About");
-        }, 1000);
+
+        if (!showAbout) {
+            updateShowAnimation("Exit");
+            setTimeout(() => {
+                updateShowPage("About");
+            }, 1000);
+        }
     };
 
     const handleHeaderButtonActivities = () => {
         playClickSound();
-        updateShowAnimation("Exit");
-        setTimeout(() => {
-            updateShowPage("Activities");
-        }, 1000);
+
+        if (!showActivities) {
+            updateShowAnimation("Exit");
+            setTimeout(() => {
+                updateShowPage("Activities");
+            }, 1000);
+        }
     };
 
     const handleHeaderButtonProjects = () => {
         playClickSound();
-        updateShowAnimation("Exit");
-        setTimeout(() => {
-            updateShowPage("Projects");
-        }, 1000);
+
+        if (!showProjects) {
+            updateShowAnimation("Exit");
+            setTimeout(() => {
+                updateShowPage("Projects");
+            }, 1000);
+        }
     };
 
     const handleHeaderButtonSkills = () => {
         playClickSound();
-        updateShowAnimation("Exit");
-        setTimeout(() => {
-            updateShowPage("Skills");
-        }, 1000);
+
+        if (!showSkills) {
+            updateShowAnimation("Exit");
+            setTimeout(() => {
+                updateShowPage("Skills");
+            }, 1000);
+        }
     };
 
-    //** Syle */
+    //** Style */
     useEffect(() => {
         if (!showDesktopIntro) {
-            gsap.to(".desktop_header", { duration: 2, opacity: 1, delay: 0.5 });
+            gsap.to(".desktop_header", { duration: 1, opacity: 1 });
         }
     }, [showDesktopIntro]);
 
