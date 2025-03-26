@@ -27,10 +27,9 @@ const MobileAbout = () => {
                     and I quickly developed a deep passion for technology and
                     creation during my childhood.
                 </p>
-
                 <img
                     className="mobile_bio-text-icon"
-                    src="/icons/smart_toy_wght200_48.png"
+                    src="/icons/smart_toy_E38A84_wght200_48.png"
                     alt=""
                 />
                 <p className="mobile_about-text">
@@ -43,7 +42,7 @@ const MobileAbout = () => {
                 </p>
                 <img
                     className="mobile_bio-text-icon"
-                    src="/icons/handshake_wght200_48.png"
+                    src="/icons/handshake_E38A84_wght200_48.png"
                     alt=""
                 />
                 <p className="mobile_about-text">

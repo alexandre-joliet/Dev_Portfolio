@@ -20,9 +20,10 @@
 }
 
 .mobile_bio-text-icon {
-    width: 48px;
-    height: 48px;
+    width: var(--48px);
+    height: var(--48px);
     margin: 0 auto var(--margin-small) auto;
+    filter: drop-shadow(0 0 1.25px var(--color-accent));
 }
 
 /***** MEDIA QUERIES *****/

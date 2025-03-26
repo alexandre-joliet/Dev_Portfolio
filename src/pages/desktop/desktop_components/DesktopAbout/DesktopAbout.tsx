@@ -48,7 +48,7 @@ const DesktopAbout = () => {
 
                     <img
                         className="desktop_about-text-icon"
-                        src="/icons/smart_toy_wght200_48.png"
+                        src="/icons/smart_toy_E38A84_wght200_48.png"
                         alt=""
                     />
                     <p className="desktop_about_section-text">
@@ -61,7 +61,7 @@ const DesktopAbout = () => {
                     </p>
                     <img
                         className="desktop_about-text-icon"
-                        src="/icons/handshake_wght200_48.png"
+                        src="/icons/handshake_E38A84_wght200_48.png"
                         alt=""
                     />
                     <p className="desktop_about_section-text">
