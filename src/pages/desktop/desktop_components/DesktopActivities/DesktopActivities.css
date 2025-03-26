@@ -10,13 +10,17 @@
     filter: blur(5px);
 }
 
-.desktop_activities-section-title {
+.desktop_activities-section-title,
+.desktop_activities-section-subtitle {
     font-family: "stratum-1-web";
+}
+
+.desktop_activities-section-title {
     font-size: var(--56px);
 }
 
 .desktop_activities-section-subtitle {
-    font-size: var(--22px);
+    font-size: var(--28px);
 }
 
 .desktop_activities-section-list {

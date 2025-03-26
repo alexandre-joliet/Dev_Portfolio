@@ -10,13 +10,17 @@
     list-style-type: circle;
 }
 
-.mobile_activities-section-title {
+.mobile_activities-section-title,
+.mobile_activities-section-subtitle {
     font-family: "stratum-1-web";
+}
+
+.mobile_activities-section-title {
     font-size: var(--48px);
 }
 
 .mobile_activities-section-subtitle {
-    font-size: var(--20px);
+    font-size: var(--24px);
 }
 
 .mobile_activities-section-list {

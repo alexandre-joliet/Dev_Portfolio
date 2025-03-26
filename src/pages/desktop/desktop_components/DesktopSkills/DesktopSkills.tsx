@@ -21,6 +21,28 @@ const DesktopSkills = () => {
                 filter: "blur(0px)",
             });
         }
+
+        const hardList = document.querySelectorAll(".desktop_skills-list-item");
+
+        gsap.utils.toArray<HTMLElement>(hardList).forEach((element, i) => {
+            gsap.to(element, {
+                translateX: 0,
+                duration: 1,
+                delay: i * 0.1, // Stagger effect
+            });
+        });
+
+        const softList = document.querySelectorAll(
+            ".desktop_skills-list-item-soft"
+        );
+
+        gsap.utils.toArray<HTMLElement>(softList).forEach((element, i) => {
+            gsap.to(element, {
+                translateX: 0,
+                duration: 1,
+                delay: i * 0.1, // Stagger effect
+            });
+        });
     }, [showSkills]);
 
     useEffect(() => {
@@ -172,7 +194,7 @@ const DesktopSkills = () => {
                             Git
                         </li>
                     </ul>
-                    <h3 className="portfolio_section-skills-subtitle">
+                    <h3 className="desktop_skills_section-subtitle">
                         SOFT SKILLS
                     </h3>
                     <ul className="desktop_skills-list-container">
