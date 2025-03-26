@@ -63,7 +63,7 @@ const Welcome = () => {
                     <span className="welcome_text-accentuation">DEVICE</span>
                 </p>
                 <p className="welcome_text">
-                    Choose the phone or the computer, or use the menu below to
+                    Click on the phone or the computer, or use the menu below to
                     navigate between them. For{" "}
                     <span className="welcome_text-accentuation">tablets</span>,
                     please choose the phone. When ready, click the button below
