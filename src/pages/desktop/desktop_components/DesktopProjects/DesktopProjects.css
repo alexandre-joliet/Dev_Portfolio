@@ -1,48 +1,55 @@
-.desktop_portfolio-projects-section {
-    display: flex;
-    flex-direction: column;
+.desktop_projects-section {
     margin-top: clamp(var(--margin-xlarge), var(--margin-xlarge), 60px);
-    padding: 0 3rem 2.5rem 3rem;
-    width: 60%;
+    padding: 0 3rem;
+    width: 100%;
     opacity: 0;
     filter: blur(5px);
 }
 
-.desktop_portfolio-projects-title {
+.desktop_projects-title {
     font-family: "stratum-1-web";
     font-size: var(--56px);
+    margin-bottom: var(--margin-small);
 }
 
-.desktop_portfolio_projects-card-container {
+.desktop_projects-cards-container {
     padding-left: 0;
 }
 
-.desktop_portfolio_projects-card {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.desktop_projects-card {
+    display: grid;
+    grid-template-columns: 25% 75%;
     gap: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
     font-family: "Lato";
-    margin-bottom: var(--margin-small);
-    width: 100%;
+    list-style-type: none;
+    margin-bottom: 6rem;
+    /* width: 100%; */
+}
+
+.desktop_projects-card-textcontent,
+.desktop_projects-card-image {
+    border-radius: 10px;
 }
 
 .desktop_projects-card-image {
-    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+    /* height: 100%; */
+    object-fit: cover;
+}
+
+.desktop_projects-card-textcontent {
+    /* border: 1px solid var(--color-accent);
+    box-shadow: 0 0 8px 2px rgba(227, 138, 132, 0.25); */
+    padding-right: 1rem;
 }
 
 .desktop_projects-card-title {
+    color: var(--color-accent);
+    text-shadow: 0 0 2px var(--color-accent);
     font-family: "stratum-1-web";
-    font-size: var(--22px);
+    font-size: var(--28px);
     font-weight: 700;
-}
-
-.desktop_projects-card-info {
-    padding: 0 1rem 1rem 1rem;
+    margin-bottom: var(--margin-small);
 }
 
 .desktop_projects-card-info .desktop_projects-card-info-text:nth-child(2) {
@@ -52,25 +59,50 @@
 .desktop_projects-card-info-title {
     color: var(--color-accent);
     font-family: "stratum-1-web";
-    font-size: var(--18px);
+    font-size: var(--20px);
     font-weight: 700;
 }
 
-.desktop_projects-card-text {
+.desktop_projects-card-info-text {
     font-family: "Lato";
     font-size: var(--18px);
-    padding: 0 1rem 1rem 1rem;
+    margin-bottom: var(--margin-small);
+}
+
+.desktop_projects-card-link {
+    text-decoration: none;
 }
 
 .desktop_projects-card-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    /* justify-content: space-between; */
     background-color: transparent;
-    border: 2px solid white;
-    border-radius: 50%;
+    border: 1px solid var(--color-accent);
+    border-radius: 100vw;
     cursor: pointer;
+    font-family: "stratum-1-web";
+    font-size: var(--20px);
+    font-weight: 700;
     outline: none;
-    width: 48px;
-    height: 48px;
+    margin-bottom: var(--margin-small);
+    padding: 0.5rem 2rem;
+    width: 55%;
     transition: background-color ease-in-out 300ms;
+}
+
+.desktop_projects-card-icons {
+    width: calc(26rem / 16);
+    height: calc(26rem / 16);
+    transform: rotateZ(45deg);
+}
+
+.icon-github {
+    width: var(--24px);
+    height: var(--24px);
+    transform: rotateZ(0);
 }
 
 .desktop_projects-card-button:hover,
