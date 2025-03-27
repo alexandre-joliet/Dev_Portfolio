@@ -45,7 +45,7 @@ const PortfolioMobile = () => {
         if (!showMobileIntro) {
             gsap.to(".mobile_background", {
                 duration: 2,
-                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                backgroundColor: "rgba(0, 0, 0, 0.6)",
             });
         }
     }, [showMobileIntro]);
