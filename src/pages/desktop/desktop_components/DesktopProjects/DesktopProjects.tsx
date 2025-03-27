@@ -2,11 +2,15 @@ import "./DesktopProjects.css";
 import gsap from "gsap";
 import { useEffect } from "react";
 import useIframeStore from "../../../../stores/iframeStore";
+import useHoverSound from "../../../../components/Extras/SoundEffects/hoverSound";
+import useClickSound from "../../../../components/Extras/SoundEffects/clickSound";
 
 const DesktopProjects = () => {
     //** Logic */
     const { showProjects, showExitAnimation, updateShowAnimation } =
         useIframeStore();
+    const playHoverSound = useHoverSound();
+    const playClickSound = useClickSound();
 
     //** Style */
     useEffect(() => {
@@ -65,7 +69,11 @@ const DesktopProjects = () => {
                                             href="https://github.com/alexandre-joliet/Dev_Portfolio"
                                             target="_blank"
                                         >
-                                            <button className="desktop_projects-card-button">
+                                            <button
+                                                className="desktop_projects-card-button"
+                                                onMouseEnter={playHoverSound}
+                                                onClick={playClickSound}
+                                            >
                                                 <img
                                                     className="desktop_projects-card-icons icon-github"
                                                     src="/icons/github.png"
@@ -108,7 +116,11 @@ const DesktopProjects = () => {
                                             href="https://www.alexandrejoliet-photo.com/"
                                             target="_blank"
                                         >
-                                            <button className="desktop_projects-card-button">
+                                            <button
+                                                className="desktop_projects-card-button"
+                                                onMouseEnter={playHoverSound}
+                                                onClick={playClickSound}
+                                            >
                                                 <img
                                                     className="desktop_projects-card-icons"
                                                     src="/icons/up-arrow.png"
@@ -122,7 +134,11 @@ const DesktopProjects = () => {
                                             href="https://github.com/alexandre-joliet/Photo_Portfolio"
                                             target="_blank"
                                         >
-                                            <button className="desktop_projects-card-button">
+                                            <button
+                                                className="desktop_projects-card-button"
+                                                onMouseEnter={playHoverSound}
+                                                onClick={playClickSound}
+                                            >
                                                 <img
                                                     className="desktop_projects-card-icons icon-github"
                                                     src="/icons/github.png"
@@ -165,7 +181,11 @@ const DesktopProjects = () => {
                                             href="https://www.vendome-taekwondo.com/"
                                             target="_blank"
                                         >
-                                            <button className="desktop_projects-card-button">
+                                            <button
+                                                className="desktop_projects-card-button"
+                                                onMouseEnter={playHoverSound}
+                                                onClick={playClickSound}
+                                            >
                                                 <img
                                                     className="desktop_projects-card-icons"
                                                     src="/icons/up-arrow.png"
@@ -179,7 +199,11 @@ const DesktopProjects = () => {
                                             href="https://github.com/alexandre-joliet/Vendome_TKD"
                                             target="_blank"
                                         >
-                                            <button className="desktop_projects-card-button">
+                                            <button
+                                                className="desktop_projects-card-button"
+                                                onMouseEnter={playHoverSound}
+                                                onClick={playClickSound}
+                                            >
                                                 <img
                                                     className="desktop_projects-card-icons icon-github"
                                                     src="/icons/github.png"

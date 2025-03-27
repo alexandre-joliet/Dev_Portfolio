@@ -2,8 +2,15 @@ import "./MobilleProjects.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
+import useHoverSound from "../../../../components/Extras/SoundEffects/hoverSound";
+import useClickSound from "../../../../components/Extras/SoundEffects/clickSound";
 
 const MobileProjects = () => {
+    //** Logic */
+    const playHoverSound = useHoverSound();
+    const playClickSound = useClickSound();
+
+    //** Style */
     gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {
@@ -58,7 +65,11 @@ const MobileProjects = () => {
                                     href="https://github.com/alexandre-joliet/Dev_Portfolio"
                                     target="_blank"
                                 >
-                                    <button className="mobile_projects-card-button">
+                                    <button
+                                        className="mobile_projects-card-button"
+                                        onMouseEnter={playHoverSound}
+                                        onClick={playClickSound}
+                                    >
                                         <img
                                             className="mobile_projects-card-icons icon-github"
                                             src="/icons/github.png"
@@ -98,7 +109,11 @@ const MobileProjects = () => {
                                     href="https://www.alexandrejoliet-photo.com/"
                                     target="_blank"
                                 >
-                                    <button className="mobile_projects-card-button">
+                                    <button
+                                        className="mobile_projects-card-button"
+                                        onMouseEnter={playHoverSound}
+                                        onClick={playClickSound}
+                                    >
                                         <img
                                             className="mobile_projects-card-icons"
                                             src="/icons/up-arrow.png"
@@ -112,7 +127,11 @@ const MobileProjects = () => {
                                     href="https://github.com/alexandre-joliet/Photo_Portfolio"
                                     target="_blank"
                                 >
-                                    <button className="mobile_projects-card-button">
+                                    <button
+                                        className="mobile_projects-card-button"
+                                        onMouseEnter={playHoverSound}
+                                        onClick={playClickSound}
+                                    >
                                         <img
                                             className="mobile_projects-card-icons icon-github"
                                             src="/icons/github.png"
@@ -152,7 +171,11 @@ const MobileProjects = () => {
                                     href="https://www.vendome-taekwondo.com/"
                                     target="_blank"
                                 >
-                                    <button className="mobile_projects-card-button">
+                                    <button
+                                        className="mobile_projects-card-button"
+                                        onMouseEnter={playHoverSound}
+                                        onClick={playClickSound}
+                                    >
                                         <img
                                             className="mobile_projects-card-icons"
                                             src="/icons/up-arrow.png"
@@ -166,7 +189,11 @@ const MobileProjects = () => {
                                     href="https://github.com/alexandre-joliet/Vendome_TKD"
                                     target="_blank"
                                 >
-                                    <button className="mobile_projects-card-button">
+                                    <button
+                                        className="mobile_projects-card-button"
+                                        onMouseEnter={playHoverSound}
+                                        onClick={playClickSound}
+                                    >
                                         <img
                                             className="mobile_projects-card-icons icon-github"
                                             src="/icons/github.png"
