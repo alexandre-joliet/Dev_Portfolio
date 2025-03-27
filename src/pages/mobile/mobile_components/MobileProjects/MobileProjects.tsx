@@ -10,7 +10,7 @@ const MobileProjects = () => {
         const scrollTrigger = ScrollTrigger.create({
             trigger: ".mobile_projects-section",
             scroller: ".mobile-content-wrapper",
-            start: 1800,
+            start: 2350,
             // markers: true,
             // onEnter: () => console.log("Section entered viewport"),
         });
@@ -43,7 +43,7 @@ const MobileProjects = () => {
                                 <p className="mobile_projects-card-info-title">
                                     INFO
                                 </p>
-                                <p className="projects-card-info-text">
+                                <p className="mobile_projects-card-info-text">
                                     Built from scratch to showcase my work
                                 </p>
                                 <p className="mobile_projects-card-info-title">
@@ -53,6 +53,20 @@ const MobileProjects = () => {
                                     Blender, React, TypeScript, React-router,
                                     Zustand, GSAP and Vite
                                 </p>
+                                <a
+                                    className="mobile_projects-card-link"
+                                    href="https://github.com/alexandre-joliet/Dev_Portfolio"
+                                    target="_blank"
+                                >
+                                    <button className="mobile_projects-card-button">
+                                        <img
+                                            className="mobile_projects-card-icons icon-github"
+                                            src="/icons/github.png"
+                                            alt=""
+                                        />
+                                        Repo
+                                    </button>
+                                </a>
                             </div>
                         </li>
                         <li className="mobile_projects-card">
@@ -64,18 +78,6 @@ const MobileProjects = () => {
                             <p className="mobile_projects-card-title">
                                 PHOTOGRAPHY PORTFOLIO
                             </p>
-                            <a
-                                className="mobile_projects-card-link"
-                                href="https://www.alexandrejoliet-photo.com/"
-                                target="_blank"
-                            >
-                                <button className="mobile_projects-card-button">
-                                    <img
-                                        src="/icons/link_wght200_48.png"
-                                        alt=""
-                                    />
-                                </button>
-                            </a>
                             <div className="mobile_projects-card-info">
                                 <p className="mobile_projects-card-info-title">
                                     INFO
@@ -91,6 +93,34 @@ const MobileProjects = () => {
                                     NextJS, ReactJS, TypeScript, Framer Motion
                                     and Cloudinary
                                 </p>
+                                <a
+                                    className="mobile_projects-card-link"
+                                    href="https://www.alexandrejoliet-photo.com/"
+                                    target="_blank"
+                                >
+                                    <button className="mobile_projects-card-button">
+                                        <img
+                                            className="mobile_projects-card-icons"
+                                            src="/icons/up-arrow.png"
+                                            alt=""
+                                        />
+                                        Live
+                                    </button>
+                                </a>
+                                <a
+                                    className="mobile_projects-card-link"
+                                    href="https://github.com/alexandre-joliet/Photo_Portfolio"
+                                    target="_blank"
+                                >
+                                    <button className="mobile_projects-card-button">
+                                        <img
+                                            className="mobile_projects-card-icons icon-github"
+                                            src="/icons/github.png"
+                                            alt=""
+                                        />
+                                        Repo
+                                    </button>
+                                </a>
                             </div>
                         </li>
                         <li className="mobile_projects-card">
@@ -102,19 +132,6 @@ const MobileProjects = () => {
                             <p className="mobile_projects-card-title">
                                 VENDOME TAEKWONDO CLUB
                             </p>
-
-                            <a
-                                className="mobile_projects-card-link"
-                                href="https://www.vendome-taekwondo.com/"
-                                target="_blank"
-                            >
-                                <button className="mobile_projects-card-button">
-                                    <img
-                                        src="/icons/link_wght200_48.png"
-                                        alt=""
-                                    />
-                                </button>
-                            </a>
                             <div className="mobile_projects-card-info">
                                 <p className="mobile_projects-card-info-title">
                                     INFO
@@ -130,6 +147,34 @@ const MobileProjects = () => {
                                 <p className="mobile_projects-card-info-text">
                                     NextJS, ReactJS and TypeScript
                                 </p>
+                                <a
+                                    className="mobile_projects-card-link"
+                                    href="https://www.vendome-taekwondo.com/"
+                                    target="_blank"
+                                >
+                                    <button className="mobile_projects-card-button">
+                                        <img
+                                            className="mobile_projects-card-icons"
+                                            src="/icons/up-arrow.png"
+                                            alt=""
+                                        />
+                                        Live
+                                    </button>
+                                </a>
+                                <a
+                                    className="mobile_projects-card-link"
+                                    href="https://github.com/alexandre-joliet/Vendome_TKD"
+                                    target="_blank"
+                                >
+                                    <button className="mobile_projects-card-button">
+                                        <img
+                                            className="mobile_projects-card-icons icon-github"
+                                            src="/icons/github.png"
+                                            alt=""
+                                        />
+                                        Repo
+                                    </button>
+                                </a>
                             </div>
                         </li>
                     </ul>

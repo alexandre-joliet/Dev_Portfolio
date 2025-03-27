@@ -10,6 +10,7 @@
 .mobile_projects-title {
     font-family: "stratum-1-web";
     font-size: var(--48px);
+    margin-bottom: var(--10px);
 }
 
 .mobile_projects-card-container {
@@ -36,7 +37,7 @@
 
 .mobile_projects-card-title {
     font-family: "stratum-1-web";
-    font-size: var(--22px);
+    font-size: var(--24px);
     font-weight: 700;
 }
 
@@ -44,7 +45,7 @@
     padding: 0 1rem 1rem 1rem;
 }
 
-.mobile_projects-card-info .mobile_projects-card-info-text:nth-child(2) {
+.mobile_projects-card-info .mobile_projects-card-info-text {
     margin-bottom: var(--margin-small);
 }
 
@@ -61,15 +62,35 @@
     padding: 0 1rem 1rem 1rem;
 }
 
+.mobile_projects-card-link {
+    color: white;
+    text-decoration: none;
+}
+
 .mobile_projects-card-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
     background-color: transparent;
-    border: transparent;
-    border-radius: 50%;
+    border: 1px solid var(--color-accent);
+    border-radius: 100vw;
     cursor: pointer;
+    color: white;
+    font-family: "stratum-1-web";
+    font-size: var(--20px);
+    font-weight: 700;
     outline: none;
-    width: 48px;
-    height: 48px;
+    margin-bottom: var(--margin-small);
+    padding: 0.5rem 2rem;
+    max-width: 60%;
     transition: background-color ease-in-out 300ms;
+}
+
+.mobile_projects-card-icons {
+    width: calc(26rem / 16);
+    height: calc(26rem / 16);
+    transform: rotateZ(45deg);
 }
 
 .mobile_projects-card-button:hover,
