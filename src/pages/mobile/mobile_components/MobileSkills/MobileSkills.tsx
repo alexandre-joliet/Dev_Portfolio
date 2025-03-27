@@ -11,7 +11,7 @@ const MobileSkills = () => {
             trigger: ".mobile_skills-section",
             scroller: ".mobile-content-wrapper",
             start: 1300,
-            // markers: true,
+            // markers:Mob   true,
             // onEnter: () => console.log("Section entered viewport"),
         });
 
