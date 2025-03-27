@@ -29,7 +29,7 @@ const DesktopHero = () => {
 
     useEffect(() => {
         if (showDesktopIntro) {
-            gsap.to(".desktop_hero", { duration: 2, opacity: 1, delay: 3 });
+            gsap.to(".desktop_hero", { duration: 4, opacity: 1, delay: 1 });
         }
     }, [showDesktopIntro]);
 

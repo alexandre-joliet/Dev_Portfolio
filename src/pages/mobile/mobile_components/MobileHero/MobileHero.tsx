@@ -31,7 +31,7 @@ const MobileHero = () => {
             gsap.to(".mobile_hero_section", {
                 duration: 2,
                 opacity: 1,
-                delay: 3,
+                delay: 2,
             });
         }
     }, [showMobileIntro]);
