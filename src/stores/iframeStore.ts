@@ -24,7 +24,7 @@ const useIframeStore = create<IframeState>((set) => ({
     updateShowContent: (value) => set({ showContent: value }),
     showMobileIntro: true,
     updateShowMobileIntro: (value) => set({ showMobileIntro: value }),
-    showDesktopIntro: false,
+    showDesktopIntro: true,
     updateShowDesktopIntro: (value) => set({ showDesktopIntro: value }),
     showAbout: false,
     showActivities: false,
