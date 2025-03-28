@@ -351,6 +351,11 @@ const Experience = () => {
                             onClick={handeDefaultButtonToggle}
                         >
                             <img
+                                className="button-icon"
+                                src="/icons/home_wght200_48.png"
+                                alt=""
+                            ></img>
+                            {/* <img
                                 className="button_reset-icon-outer"
                                 src="/icons/cameraswitch_wght200_48_outer.png"
                                 alt=""
@@ -359,7 +364,7 @@ const Experience = () => {
                                 className="button_reset-icon-inner"
                                 src="/icons/cameraswitch_wght200_48_inner.png"
                                 alt=""
-                            ></img>
+                            ></img> */}
                         </button>
 
                         <button

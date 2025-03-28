@@ -53,6 +53,7 @@
 }
 
 .button_reset,
+.button_reset-hidden,
 .button_laptop,
 .button_phone,
 .toggle-action-icon {
@@ -74,8 +75,12 @@
 
 .button_reset {
     position: relative;
-    scale: 1.25;
     opacity: 0;
+    scale: 1.25;
+}
+
+.button_reset:hover {
+    scale: 1.5;
 }
 
 .button_reset-hidden {
