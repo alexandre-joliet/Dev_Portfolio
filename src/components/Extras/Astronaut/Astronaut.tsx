@@ -37,24 +37,28 @@ const Astronaut = () => {
         });
         astronautTimeline.to(groupRef.current.position, {
             duration: 30,
-            ease: "power1inOut",
+            ease: "power1.inOut",
             y: 1.5,
             z: 0.25,
         });
         astronautTimeline.to(groupRef.current.rotation, {
             duration: 10,
-            ease: "power1inOut",
+            ease: "power1.inOut",
             x: 1.6,
             y: 0.4,
             z: -1.5,
         });
-        astronautTimeline.to(groupRef.current.position, {
-            duration: 30,
-            ease: "power1inOut",
-            x: 1,
-            y: 3,
-            z: 0,
-        });
+        astronautTimeline.to(
+            groupRef.current.position,
+            {
+                duration: 30,
+                ease: "power1.inOut",
+                x: 1,
+                y: 3,
+                z: 0,
+            },
+            "<+=8"
+        );
         astronautTimeline.to(groupRef.current.position, {
             duration: 5,
             ease: "none",
