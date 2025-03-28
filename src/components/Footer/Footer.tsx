@@ -138,6 +138,16 @@ const Footer = () => {
                                 &nbsp;under Pixabay Content License
                             </li>
                             <li>
+                                Phone and computer background picture by&nbsp;
+                                <a
+                                    href="https://unsplash.com/fr/photos/une-planete-rouge-avec-une-etoile-en-arriere-plan-lH1VONHniMo"
+                                    target="_blank"
+                                >
+                                    Javier Miranda
+                                </a>
+                                &nbsp;under Unsplash License
+                            </li>
+                            <li>
                                 Sound effects by Mixkit under Mixkit Sound
                                 Effects Free License
                             </li>
