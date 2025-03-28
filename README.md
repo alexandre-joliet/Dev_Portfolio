@@ -6,11 +6,11 @@
 <table >
   <tr>
     <td align="center">🎯</td>
-    <td >This project is meant to showcase my work in an immersive way. </td>
+    <td >This project is meant to showcase my work in an immersive way.</td>
   </tr>
   <tr>
     <td align="center">👍</td>
-    <td >As the 3D scene is quite heavy for small devices, please visit this website with a computer to have the best experience and avoid lags</td>
+    <td >As the 3D scene is quite heavy for small devices, please visit this website with a computer to have the best experience and avoid lags.</td>
   </tr>
   <tr>
     <td align="center">⚠️</td>
