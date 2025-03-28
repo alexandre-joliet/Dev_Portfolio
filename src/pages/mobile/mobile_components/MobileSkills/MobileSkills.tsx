@@ -10,8 +10,8 @@ const MobileSkills = () => {
         const scrollTrigger = ScrollTrigger.create({
             trigger: ".mobile_skills-section",
             scroller: ".mobile-content-wrapper",
-            start: 1300,
-            // markers:Mob   true,
+            start: 1400,
+            markers: true,
             // onEnter: () => console.log("Section entered viewport"),
         });
 
