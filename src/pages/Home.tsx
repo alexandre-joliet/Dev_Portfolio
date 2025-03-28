@@ -15,7 +15,7 @@ function Home() {
     const browser = Bowser.getParser(window.navigator.userAgent);
 
     useEffect(() => {
-        console.log(browser);
+        // console.log(browser);
 
         // iPhone
         if (browser.getOS().name === "iOS") {
