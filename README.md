@@ -2,7 +2,6 @@
 
 <h3>Infos</h3>
 
-
 <table >
   <tr>
     <td align="center">🎯</td>
@@ -12,13 +11,20 @@
     <td align="center">👍</td>
     <td >As the 3D scene is quite heavy for small devices, please visit this website with a computer to have the best experience and avoid lags.</td>
   </tr>
+</table>
+
+<h3>Known bugs</h3>
+
+<table >
   <tr>
     <td align="center">⚠️</td>
     <td >Due to a known bug (but still unresolved) with iOS and the HTML component used in Drei, I cannot offer the full experience to the users of these devices and I had to redirect them to a static page. My apologies.</td>
   </tr>
+  <tr>
+    <td align="center">⚠️</td>
+    <td >I currently have an issue with the rendering of some rounded corners within the iframe in Firefox browsers. I still need to find a fix or a workaround.</td>
+  </tr>
 </table>
-
-
 
 <h2>Stack</h2>
 
