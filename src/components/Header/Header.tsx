@@ -113,11 +113,12 @@ const Header = () => {
 
     return (
         <>
-            {/* <section className="overlay-header"> */}
             <header className="header">
                 <div className="header_main-infos-container">
                     <h1 className="header_main-name">ALEXANDRE JOLIET</h1>
-                    <h2 className="header_main-position">Creative developer</h2>
+                    <h2 className="header_main-position">
+                        Fullstack Creative Developer
+                    </h2>
                 </div>
                 <div className="header_icons-container">
                     <button
@@ -148,7 +149,6 @@ const Header = () => {
                             alt=""
                             className="header_icons icon-mail"
                         ></img>
-                        {/* <p className="mail-text">CONTACT</p> */}
                     </button>
                 </div>
 
@@ -174,7 +174,6 @@ const Header = () => {
                                     ></img>
                                 </button>
                             </a>
-                            {/* <p className="">Mail</p> */}
                         </div>
                         <div
                             className="contact-menu-item"
@@ -193,7 +192,6 @@ const Header = () => {
                                     ></img>
                                 </button>
                             </a>
-                            {/* <p className="">Linkedin</p> */}
                         </div>
                         <div
                             className="contact-menu-item"
@@ -219,12 +217,10 @@ const Header = () => {
                                     </svg>
                                 </button>
                             </a>
-                            {/* <p className="">Github</p> */}
                         </div>
                     </div>
                 )}
             </header>
-            {/* </section> */}
         </>
     );
 };
