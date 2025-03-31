@@ -340,7 +340,7 @@ const Experience = () => {
                             <img
                                 className="toggle-action-icon"
                                 src="/icons/expand_circle1_wght200_48.png"
-                                alt=""
+                                alt="Open camera controls"
                             ></img>
                         </div>
                     </div>
@@ -354,12 +354,11 @@ const Experience = () => {
                             <img
                                 className="button-icon"
                                 src="/icons/smartphone_wght200_48.png"
-                                alt=""
+                                alt="Move camera to the phone"
                             ></img>
                         </button>
 
                         <button
-                            // className="button_reset"
                             className={
                                 !hideDefaultButton
                                     ? "button_reset"
@@ -371,18 +370,8 @@ const Experience = () => {
                             <img
                                 className="button-icon"
                                 src="/icons/home_wght200_48.png"
-                                alt=""
+                                alt="Move camera to default position"
                             ></img>
-                            {/* <img
-                                className="button_reset-icon-outer"
-                                src="/icons/cameraswitch_wght200_48_outer.png"
-                                alt=""
-                            ></img>
-                            <img
-                                className="button_reset-icon-inner"
-                                src="/icons/cameraswitch_wght200_48_inner.png"
-                                alt=""
-                            ></img> */}
                         </button>
 
                         <button
@@ -393,7 +382,7 @@ const Experience = () => {
                             <img
                                 className="button-icon"
                                 src="/icons/laptop_wght200_48.png"
-                                alt=""
+                                alt="Move camera to laptop"
                             ></img>
                         </button>
                     </div>
