@@ -57,7 +57,7 @@ const Welcome = () => {
     return (
         <>
             <div className="welcome_background"></div>
-            <div className="welcome_container">
+            <section className="welcome_container">
                 <p className="welcome_title">
                     SELECT YOUR{" "}
                     <span className="welcome_text-accentuation">DEVICE</span>
@@ -77,7 +77,7 @@ const Welcome = () => {
                 >
                     OK
                 </button>
-            </div>
+            </section>
         </>
     );
 };
