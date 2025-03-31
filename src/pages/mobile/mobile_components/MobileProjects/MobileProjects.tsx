@@ -35,7 +35,7 @@ const MobileProjects = () => {
         <>
             <section className="mobile_projects-section">
                 <h2 className="mobile_projects-title">PROJECTS</h2>
-                <div>
+                <div className="mobile_projects-content-wrapper">
                     <ul className="mobile_projects-card-container">
                         <li className="mobile_projects-card">
                             <img
@@ -43,22 +43,22 @@ const MobileProjects = () => {
                                 src="/pictures/Portfolio.webp"
                                 alt=""
                             ></img>
-                            <p className="mobile_projects-card-title">
+                            <h3 className="mobile_projects-card-title">
                                 WEB PORTFOLIO
-                            </p>
+                            </h3>
                             <div className="mobile_projects-card-info">
-                                <p className="mobile_projects-card-info-title">
+                                <h4 className="mobile_projects-card-info-title">
                                     INFO
-                                </p>
+                                </h4>
                                 <p className="mobile_projects-card-info-text">
                                     Built from scratch to showcase my work
                                 </p>
-                                <p className="mobile_projects-card-info-title">
+                                <h4 className="mobile_projects-card-info-title">
                                     STACK
-                                </p>
+                                </h4>
                                 <p className="mobile_projects-card-info-text">
-                                    Blender, React, TypeScript, React-router,
-                                    Zustand, GSAP and Vite
+                                    Blender, React, TypeScript, Three.js,
+                                    React-router, Zustand, GSAP and Vite
                                 </p>
                                 <a
                                     className="mobile_projects-card-link"
@@ -73,7 +73,7 @@ const MobileProjects = () => {
                                         <img
                                             className="mobile_projects-card-icons icon-github"
                                             src="/icons/github.png"
-                                            alt=""
+                                            alt="Open Github repository"
                                         />
                                         Repo
                                     </button>
@@ -86,20 +86,20 @@ const MobileProjects = () => {
                                 src="/pictures/Photo.webp"
                                 alt=""
                             ></img>
-                            <p className="mobile_projects-card-title">
+                            <h3 className="mobile_projects-card-title">
                                 PHOTOGRAPHY PORTFOLIO
-                            </p>
+                            </h3>
                             <div className="mobile_projects-card-info">
-                                <p className="mobile_projects-card-info-title">
+                                <h4 className="mobile_projects-card-info-title">
                                     INFO
-                                </p>
+                                </h4>
                                 <p className="mobile_projects-card-info-text">
                                     Personal project to host and showcase my
                                     photography work
                                 </p>
-                                <p className="mobile_projects-card-info-title">
+                                <h4 className="mobile_projects-card-info-title">
                                     STACK
-                                </p>
+                                </h4>
                                 <p className="mobile_projects-card-info-text">
                                     NextJS, ReactJS, TypeScript, Framer Motion
                                     and Cloudinary
@@ -117,7 +117,7 @@ const MobileProjects = () => {
                                         <img
                                             className="mobile_projects-card-icons"
                                             src="/icons/up-arrow.png"
-                                            alt=""
+                                            alt="Open website"
                                         />
                                         Live
                                     </button>
@@ -135,7 +135,7 @@ const MobileProjects = () => {
                                         <img
                                             className="mobile_projects-card-icons icon-github"
                                             src="/icons/github.png"
-                                            alt=""
+                                            alt="Open Github repository"
                                         />
                                         Repo
                                     </button>
@@ -148,21 +148,21 @@ const MobileProjects = () => {
                                 src="/pictures/TKD.webp"
                                 alt=""
                             ></img>
-                            <p className="mobile_projects-card-title">
+                            <h3 className="mobile_projects-card-title">
                                 VENDOME TAEKWONDO CLUB
-                            </p>
+                            </h3>
                             <div className="mobile_projects-card-info">
-                                <p className="mobile_projects-card-info-title">
+                                <h4 className="mobile_projects-card-info-title">
                                     INFO
-                                </p>
+                                </h4>
                                 <p className="mobile_projects-card-info-text">
                                     Creation of a website for a local sports
                                     association to increase its visibility,
                                     share information and recruit new members
                                 </p>
-                                <p className="mobile_projects-card-info-title">
+                                <h4 className="mobile_projects-card-info-title">
                                     STACK
-                                </p>
+                                </h4>
                                 <p className="mobile_projects-card-info-text">
                                     NextJS, ReactJS and TypeScript
                                 </p>
@@ -179,7 +179,7 @@ const MobileProjects = () => {
                                         <img
                                             className="mobile_projects-card-icons"
                                             src="/icons/up-arrow.png"
-                                            alt=""
+                                            alt="Open website"
                                         />
                                         Live
                                     </button>
@@ -197,7 +197,7 @@ const MobileProjects = () => {
                                         <img
                                             className="mobile_projects-card-icons icon-github"
                                             src="/icons/github.png"
-                                            alt=""
+                                            alt="Open Github repository"
                                         />
                                         Repo
                                     </button>

@@ -46,23 +46,24 @@ const DesktopProjects = () => {
                         <ul className="desktop_projects-cards-container">
                             <li className="desktop_projects-card">
                                 <div className="desktop_projects-card-textcontent">
-                                    <p className="desktop_projects-card-title">
+                                    <h3 className="desktop_projects-card-title">
                                         WEB PORTFOLIO
-                                    </p>
+                                    </h3>
                                     <div className="desktop_projects-card-info">
-                                        <p className="desktop_projects-card-info-title">
+                                        <h4 className="desktop_projects-card-info-title">
                                             INFO
-                                        </p>
+                                        </h4>
                                         <p className="desktop_projects-card-info-text">
                                             Built from scratch to showcase my
                                             work
                                         </p>
-                                        <p className="desktop_projects-card-info-title">
+                                        <h4 className="desktop_projects-card-info-title">
                                             STACK
-                                        </p>
+                                        </h4>
                                         <p className="desktop_projects-card-info-text">
                                             Blender, React, TypeScript,
-                                            React-router, Zustand, GSAP and Vite
+                                            Three.js, React-router, Zustand,
+                                            GSAP and Vite
                                         </p>
                                         <a
                                             className="desktop_projects-card-link"
@@ -77,7 +78,7 @@ const DesktopProjects = () => {
                                                 <img
                                                     className="desktop_projects-card-icons icon-github"
                                                     src="/icons/github.png"
-                                                    alt=""
+                                                    alt="Open Github repository"
                                                 />
                                                 Repo
                                             </button>
@@ -92,21 +93,21 @@ const DesktopProjects = () => {
                             </li>
                             <li className="desktop_projects-card">
                                 <div className="desktop_projects-card-textcontent">
-                                    <p className="desktop_projects-card-title">
+                                    <h3 className="desktop_projects-card-title">
                                         PHOTOGRAPHY PORTFOLIO
-                                    </p>
+                                    </h3>
 
                                     <div className="desktop_projects-card-info">
-                                        <p className="desktop_projects-card-info-title">
+                                        <h4 className="desktop_projects-card-info-title">
                                             INFO
-                                        </p>
+                                        </h4>
                                         <p className="desktop_projects-card-info-text">
                                             Personal project to host and
                                             showcase my photography work
                                         </p>
-                                        <p className="desktop_projects-card-info-title">
+                                        <h4 className="desktop_projects-card-info-title">
                                             STACK
-                                        </p>
+                                        </h4>
                                         <p className="desktop_projects-card-info-text">
                                             NextJS, ReactJS, TypeScript, Framer
                                             Motion and Cloudinary
@@ -124,7 +125,7 @@ const DesktopProjects = () => {
                                                 <img
                                                     className="desktop_projects-card-icons"
                                                     src="/icons/up-arrow.png"
-                                                    alt=""
+                                                    alt="Open website"
                                                 />
                                                 Live
                                             </button>
@@ -142,7 +143,7 @@ const DesktopProjects = () => {
                                                 <img
                                                     className="desktop_projects-card-icons icon-github"
                                                     src="/icons/github.png"
-                                                    alt=""
+                                                    alt="Open Github repository"
                                                 />
                                                 Repo
                                             </button>
@@ -157,22 +158,22 @@ const DesktopProjects = () => {
                             </li>
                             <li className="desktop_projects-card">
                                 <div className="desktop_projects-card-textcontent">
-                                    <p className="desktop_projects-card-title">
+                                    <h3 className="desktop_projects-card-title">
                                         VENDOME TAEKWONDO CLUB
-                                    </p>
+                                    </h3>
                                     <div className="desktop_projects-card-info">
-                                        <p className="desktop_projects-card-info-title">
+                                        <h4 className="desktop_projects-card-info-title">
                                             INFO
-                                        </p>
+                                        </h4>
                                         <p className="desktop_projects-card-info-text">
                                             Creation of a website for a local
                                             sports association to increase its
                                             visibility, share information and
                                             recruit new members
                                         </p>
-                                        <p className="desktop_projects-card-info-title">
+                                        <h4 className="desktop_projects-card-info-title">
                                             STACK
-                                        </p>
+                                        </h4>
                                         <p className="desktop_projects-card-info-text">
                                             NextJS, ReactJS and TypeScript
                                         </p>
@@ -189,7 +190,7 @@ const DesktopProjects = () => {
                                                 <img
                                                     className="desktop_projects-card-icons"
                                                     src="/icons/up-arrow.png"
-                                                    alt=""
+                                                    alt="Open website"
                                                 />
                                                 Live
                                             </button>
@@ -207,7 +208,7 @@ const DesktopProjects = () => {
                                                 <img
                                                     className="desktop_projects-card-icons icon-github"
                                                     src="/icons/github.png"
-                                                    alt=""
+                                                    alt="Open Github repository"
                                                 />
                                                 Repo
                                             </button>
