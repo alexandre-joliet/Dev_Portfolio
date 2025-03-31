@@ -14,12 +14,13 @@ const useCameraStore = create<CameraState>((set) => ({
     defaultCameraPosition: true,
     laptopCameraPosition: false,
     phoneCameraPosition: false,
-    updateCameraPosition: (position) =>
+    updateCameraPosition: (position) => {
         set({
             defaultCameraPosition: position === "default",
             laptopCameraPosition: position === "laptop",
             phoneCameraPosition: position === "phone",
-        }),
+        });
+    },
     phoneScreenOn: false,
     phoneScreenOff: true,
     updateScreenOn: (value) =>
