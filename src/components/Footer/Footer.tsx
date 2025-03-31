@@ -12,16 +12,6 @@ const Footer = () => {
     const playHoverSound = useHoverSound();
     const playClickSound = useClickSound();
 
-    useEffect(() => {
-        if (showHeader) {
-            gsap.to(".footer", {
-                duration: 2,
-                ease: "power1.inOut",
-                opacity: 1,
-            });
-        }
-    }, [showHeader]);
-
     const handleFooterActions = () => {
         playClickSound();
         if (showFooter) {
@@ -37,16 +27,6 @@ const Footer = () => {
             setShowFooter(true);
         }
     };
-
-    useEffect(() => {
-        if (showFooter) {
-            gsap.to(".footer_sections-container", {
-                duration: 0.4,
-                opacity: 1,
-                scale: 1,
-            });
-        }
-    }, [showFooter]);
 
     // Handle outside click
     const footerRef = useRef<HTMLDivElement>(null);
@@ -80,9 +60,30 @@ const Footer = () => {
         };
     });
 
+    //** Style */
+    useEffect(() => {
+        if (showHeader) {
+            gsap.to(".footer", {
+                duration: 2,
+                ease: "power1.inOut",
+                opacity: 1,
+            });
+        }
+    }, [showHeader]);
+
+    useEffect(() => {
+        if (showFooter) {
+            gsap.to(".footer_sections-container", {
+                duration: 0.4,
+                opacity: 1,
+                scale: 1,
+            });
+        }
+    }, [showFooter]);
+
     return (
         <>
-            <div
+            <footer
                 ref={footerRef}
                 className="footer"
             >
@@ -93,7 +94,7 @@ const Footer = () => {
                 >
                     Legal terms
                 </button>
-            </div>
+            </footer>
 
             {showFooter && (
                 <div
@@ -101,7 +102,7 @@ const Footer = () => {
                     className="footer_sections-container"
                 >
                     <section className="footer_section">
-                        <p className="footer_section-subtitle">CREDITS</p>
+                        <h2 className="footer_section-subtitle">CREDITS</h2>
                         <p>
                             You'll find below the assets used in this website
                             and not created by its author, Alexandre JOLIET.
@@ -154,15 +155,14 @@ const Footer = () => {
                         </ul>
                     </section>
                     <section className="footer_section">
-                        <p className="footer_section-subtitle">EDITOR</p>
+                        <h2 className="footer_section-subtitle">EDITOR</h2>
                         <p>
                             This website is edited by Alexandre JOLIET,
                             Developer.
                         </p>
-                        <p></p>
                     </section>
                     <section className="footer_section">
-                        <p className="footer_section-subtitle">HOSTING</p>
+                        <h2 className="footer_section-subtitle">HOSTING</h2>
                         <p>
                             This site is hosted by Vercel Inc. located at 340 S
                             Lemon Ave #4133 Walnut, CA 91789, and can be reached
