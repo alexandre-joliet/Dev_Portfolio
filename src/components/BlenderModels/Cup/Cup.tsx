@@ -65,7 +65,7 @@ const Cup = () => {
         if (!cupHeating) {
             setCupInteractionAllowed(false);
             coolingTimeline.to(smokeMeshRef.current.scale, {
-                duration: 27,
+                duration: 23,
                 x: 0,
                 y: 0,
                 z: 0,
@@ -75,7 +75,7 @@ const Cup = () => {
                 {
                     duration: 1,
                     opacity: 0,
-                    delay: 8,
+                    delay: 6,
                 },
                 "<"
             );
@@ -84,7 +84,7 @@ const Cup = () => {
                 {
                     duration: 1,
                     opacity: 0,
-                    delay: 8,
+                    delay: 6,
                 },
                 ">"
             );
@@ -93,7 +93,7 @@ const Cup = () => {
                 {
                     duration: 1,
                     opacity: 0,
-                    delay: 8,
+                    delay: 6,
                 },
                 ">"
             );
