@@ -4,7 +4,10 @@ type CameraState = {
     defaultCameraPosition: boolean;
     laptopCameraPosition: boolean;
     phoneCameraPosition: boolean;
-    updateCameraPosition: (position: "default" | "laptop" | "phone") => void;
+    cupCameraPosition: boolean;
+    updateCameraPosition: (
+        position: "default" | "laptop" | "phone" | "coffee"
+    ) => void;
     phoneScreenOn: boolean;
     phoneScreenOff: boolean;
     updateScreenOn: (value: "ON" | "OFF") => void;
@@ -14,11 +17,13 @@ const useCameraStore = create<CameraState>((set) => ({
     defaultCameraPosition: true,
     laptopCameraPosition: false,
     phoneCameraPosition: false,
+    cupCameraPosition: false,
     updateCameraPosition: (position) => {
         set({
             defaultCameraPosition: position === "default",
             laptopCameraPosition: position === "laptop",
             phoneCameraPosition: position === "phone",
+            cupCameraPosition: position === "coffee",
         });
     },
     phoneScreenOn: false,
