@@ -23,6 +23,7 @@ import Loading from "../Loading/Loading.tsx";
 import Welcome from "../Welcome/Welcome.tsx";
 import useHoverSound from "../Extras/SoundEffects/hoverSound.tsx";
 import useClickSound from "../Extras/SoundEffects/clickSound.tsx";
+import Cup from "../BlenderModels/Cup/Cup.tsx";
 
 const Experience = () => {
     //** Camera settings & movements */
@@ -149,6 +150,7 @@ const Experience = () => {
         defaultCameraPosition,
         laptopCameraPosition,
         phoneCameraPosition,
+        cupCameraPosition,
         updateScreenOn,
         updateCameraPosition,
     } = useCameraStore();
@@ -195,7 +197,7 @@ const Experience = () => {
 
     // Menu Default button
     useEffect(() => {
-        if (laptopCameraPosition || phoneCameraPosition) {
+        if (laptopCameraPosition || phoneCameraPosition || cupCameraPosition) {
             gsap.to(".button_reset", { duration: 1, opacity: 1 });
             updateHideDefaultButton(false);
         } else if (defaultCameraPosition && hideDefaultButton === false) {
@@ -205,6 +207,7 @@ const Experience = () => {
     }, [
         laptopCameraPosition,
         phoneCameraPosition,
+        cupCameraPosition,
         defaultCameraPosition,
         hideDefaultButton,
         updateHideDefaultButton,
@@ -261,6 +264,23 @@ const Experience = () => {
         }
     }, [phoneCameraPosition, updateUsePhone]);
 
+    // To coffee
+    useEffect(() => {
+        if (cameraRef.current && cupCameraPosition) {
+            cameraRef.current.setLookAt(1.05, 1.2, 0.1, 0.65, 0.95, 0.3, true);
+            cameraRef.current.minPolarAngle = Math.PI / 3;
+            cameraRef.current.maxPolarAngle = Math.PI / 2;
+            cameraRef.current.minAzimuthAngle = 45 * THREE.MathUtils.DEG2RAD;
+            cameraRef.current.maxAzimuthAngle = 140 * THREE.MathUtils.DEG2RAD;
+            cameraRef.current.minDistance = 0.525;
+            cameraRef.current.maxDistance = 0.5251;
+        }
+
+        if (history.state.position !== "default") {
+            history.pushState({ position: "default" }, "", "");
+        }
+    }, [cupCameraPosition]);
+
     return (
         <>
             {showLoading && <Loading setShowLoading={setShowLoading}></Loading>}
@@ -314,6 +334,7 @@ const Experience = () => {
                     <Scene />
                     <Laptop />
                     <Phone />
+                    <Cup />
                     <Hologram />
                     <Planet />
                     <BackgroundPlane />
