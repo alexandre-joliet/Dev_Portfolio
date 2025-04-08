@@ -5,14 +5,15 @@ import DesktopAbout from "./desktop_components/DesktopAbout/DesktopAbout";
 import DesktopActivities from "./desktop_components/DesktopActivities/DesktopActivities";
 import DesktopSkills from "./desktop_components/DesktopSkills/DesktopSkills";
 import DesktopProjects from "./desktop_components/DesktopProjects/DesktopProjects";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import useGeneralStore from "../../stores/generalStore";
 import useIframeStore from "../../stores/iframeStore";
 // import DesktopCanvas from "./desktop_components/DesktopCanvas/DesktopCanvas";
 
 const PortfolioDesktop = () => {
     const { updateUseLaptop, updatePlayAmbientSound } = useGeneralStore();
-    const { updateShowDesktopIntro } = useIframeStore();
+    const { updateShowDesktopIntro, showActivities, showSkills, showProjects } =
+        useIframeStore();
 
     // Receive data from parent
     useEffect(() => {
@@ -40,10 +41,20 @@ const PortfolioDesktop = () => {
         return () => window.removeEventListener("message", handleMessage);
     });
 
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (showActivities || showSkills || showProjects)
+            containerRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+    }, [showActivities, showSkills, showProjects]);
+
     return (
         <>
             <main className="destkop_portfolio_main">
-                <div className="desktop_portfolio_container">
+                <div
+                    ref={containerRef}
+                    className="desktop_portfolio_container"
+                >
                     <DesktopHeader />
                     <DesktopHero />
                     {/* <DesktopCanvas /> */}
