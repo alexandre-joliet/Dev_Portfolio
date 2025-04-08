@@ -1,12 +1,13 @@
 import "./DesktopSkills.css";
 import gsap from "gsap";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import useIframeStore from "../../../../stores/iframeStore";
 
 const DesktopSkills = () => {
     //** Logic */
     const { showSkills, showExitAnimation, updateShowAnimation } =
         useIframeStore();
+    const skillSectionRef = useRef<HTMLElement>(null);
 
     //** Style */
     useEffect(() => {
@@ -14,14 +15,10 @@ const DesktopSkills = () => {
             gsap.to(".desktop_skills_section", {
                 duration: 1,
                 opacity: 1,
-            });
-            gsap.to(".desktop_skills_section", {
-                duration: 1,
-                opacity: 1,
                 filter: "blur(0px)",
             });
+            skillSectionRef.current?.scrollTo({ top: 0, behavior: "smooth" });
         }
-
         const hardList = document.querySelectorAll(".desktop_skills-list-item");
 
         gsap.utils.toArray<HTMLElement>(hardList).forEach((element, i) => {
@@ -55,7 +52,10 @@ const DesktopSkills = () => {
     return (
         <>
             {showSkills && (
-                <section className="desktop_skills_section">
+                <section
+                    ref={skillSectionRef}
+                    className="desktop_skills_section"
+                >
                     <h2 className="desktop_skills_section-title">SKILLS</h2>
                     <h3 className="desktop_skills_section-subtitle">
                         HARD SKILLS
