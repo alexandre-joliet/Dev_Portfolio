@@ -47,7 +47,7 @@ const Loading = ({ setShowLoading }: LoadingProps) => {
     }, []);
 
     useEffect(() => {
-        if (itemsLoaded === 71) {
+        if (itemsLoaded === 73) {
             setAllLoaded(true);
         }
     }, [itemsLoaded]);
