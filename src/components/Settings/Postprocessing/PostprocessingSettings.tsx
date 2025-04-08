@@ -1,13 +1,17 @@
-import { Bloom } from "@react-three/postprocessing";
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
 const PostprocessingSettings = () => {
     return (
-        <Bloom
-            luminanceThreshold={0}
-            mipmapBlur
-            luminanceSmoothing={0}
-            intensity={2}
-        />
+        <>
+            <EffectComposer>
+                <Bloom
+                    intensity={1}
+                    luminanceThreshold={1} // With a value of 1, allows to select manually the glowing elements with toneMapped = "false"
+                    luminanceSmoothing={0.75}
+                    mipmapBlur
+                />
+            </EffectComposer>
+        </>
     );
 };
 
