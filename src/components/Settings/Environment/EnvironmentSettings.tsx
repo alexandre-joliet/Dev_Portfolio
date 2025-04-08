@@ -5,12 +5,12 @@ const EnvironmentSettings = () => {
         <Environment
             // preset="night"
             files={[
-                "environment/spaceship3/px.png",
-                "environment/spaceship3/nx.png",
-                "environment/spaceship3/py.png",
-                "environment/spaceship3/ny.png",
-                "environment/spaceship3/pz.png",
-                "environment/spaceship3/nz.png",
+                "environment/spaceship_alex/px.png",
+                "environment/spaceship_alex/nx.png",
+                "environment/spaceship_alex/py.png",
+                "environment/spaceship_alex/ny.png",
+                "environment/spaceship_alex/pz.png",
+                "environment/spaceship_alex/nz.png",
             ]}
             // environmentIntensity={0.5}
             environmentRotation={[0, Math.PI / 2, 0]}
