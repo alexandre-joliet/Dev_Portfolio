@@ -1,6 +1,5 @@
 import { useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
-import Cup from "../Cup/Cup";
 import Emissions from "../Emissions/Emissions";
 import Dust from "../../Extras/Dust/Dust";
 // import GUI from "lil-gui";
@@ -234,8 +233,6 @@ const Scene = () => {
                     opacity={0.5}
                 ></meshPhysicalMaterial>
             </mesh>
-
-            <Cup />
         </>
     );
 };
